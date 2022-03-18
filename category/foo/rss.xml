@@ -10,6 +10,8 @@
         <category>Foo</category>
         <category>Bar</category>
         <category>Baz</category>
+        <category>Hexo</category>
+        <category>教程</category>
         <item>
             <guid isPermalink="true">http://chengziyu.xyz/2013/12/24/categories/</guid>
             <title>Categories</title>

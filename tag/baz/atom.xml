@@ -7,6 +7,8 @@
     <category term="Foo" />
     <category term="Bar" />
     <category term="Baz" />
+    <category term="Hexo" />
+    <category term="教程" />
     <entry>
         <id>http://chengziyu.xyz/2013/12/24/tags/</id>
         <title>Tags</title>

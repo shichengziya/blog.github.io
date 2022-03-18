@@ -7,6 +7,8 @@
     <category term="Foo" />
     <category term="Bar" />
     <category term="Baz" />
+    <category term="Hexo" />
+    <category term="教程" />
     <entry>
         <id>http://chengziyu.xyz/2018/07/24/markdown/</id>
         <title>Markdown Style test</title>
