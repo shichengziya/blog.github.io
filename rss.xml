@@ -14,14 +14,23 @@
             <link>http://chengziyu.xyz/Congratulation~/</link>
             <category>Hexo</category>
             <pubDate>Sat, 19 Mar 2022 23:33:26 +0800</pubDate>
-            <description><![CDATA[ &lt;p class=&#34;gallery&#34; data-height=&#34;120&#34;&gt;#今天终于把 Blog 上架了～～上几张图庆祝一下&lt;br&gt;
+            <description><![CDATA[ &lt;p&gt;#今天终于把 Blog 上架了～～上几张图庆祝一下&lt;br&gt;
  photos:&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/P4712a2d81c715122.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/haibrai.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 ![](&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL011TXUtSHVhSHVhL3BpY2dvL2Nob2Nv&#34;&gt;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/choco&lt;/span&gt; (36).png)&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/azurelane1.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/1628654229183.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/1628653889627.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/1628653889627.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+{.gallery data-height=“120”}&lt;br&gt;
+audio:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: “信仰曲”&lt;br&gt;
+url: &#34; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL211c2ljLjE2My5jb20vc29uZz9pZD01MzI3NzYzNzMmYW1wO3VzZXJpZD01Njk1MjA5ODE=&#34;&gt;http://music.163.com/song?id=532776373&amp;amp;userid=569520981&lt;/span&gt;&#34;&lt;br&gt;
+artist: “艺术家”&lt;br&gt;
+cover: “封面”&lt;br&gt;
+lrc: “歌词”&lt;/li&gt;
+&lt;/ul&gt;
  ]]></description>
         </item>
     </channel>
