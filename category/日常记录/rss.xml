@@ -1,15 +1,20 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://chengziyu.xyz</id>
-    <title>橙子安全屋</title>
-    <link href="http://chengziyu.xyz" />
-    <updated>2022-03-19T15:33:26.000Z</updated>
-    <category term="Hexo" />
-    <entry>
-        <id>http://chengziyu.xyz/Congratulation~/</id>
-        <title>建站记录</title>
-        <link rel="alternate" href="http://chengziyu.xyz/Congratulation~/"/>
-        <content type="html">&lt;p class=&#34;gallery&#34; data-height=&#34;120&#34;&gt;#今天终于把 Blog 上架了～～上几张图庆祝一下&lt;br&gt;
+<rss version="2.0">
+    <channel>
+        <title>橙子安全屋 • Posts by &#34;日常记录&#34; category</title>
+        <link>http://chengziyu.xyz</link>
+        <description>My daily record and my safehouse</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 19 Mar 2022 23:33:26 +0800</pubDate>
+        <lastBuildDate>Sat, 19 Mar 2022 23:33:26 +0800</lastBuildDate>
+        <category>Hexo</category>
+        <item>
+            <guid isPermalink="true">http://chengziyu.xyz/Congratulation~/</guid>
+            <title>建站记录</title>
+            <link>http://chengziyu.xyz/Congratulation~/</link>
+            <category>Hexo</category>
+            <pubDate>Sat, 19 Mar 2022 23:33:26 +0800</pubDate>
+            <description><![CDATA[ &lt;p class=&#34;gallery&#34; data-height=&#34;120&#34;&gt;#今天终于把 Blog 上架了～～上几张图庆祝一下&lt;br&gt;
  photos:&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/P4712a2d81c715122.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/haibrai.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
@@ -31,8 +36,7 @@
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/1629816630006.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/1629816554320.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/1629816546615.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</content>
-        <category term="Hexo" />
-        <updated>2022-03-19T15:33:26.000Z</updated>
-    </entry>
-</feed>
+ ]]></description>
+        </item>
+    </channel>
+</rss>
