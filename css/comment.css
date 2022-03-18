@@ -275,6 +275,9 @@
 .v .item .tag.master {
   background-color: var(--color-orange);
 }
+.v .item .tag.visitor {
+  background-color: var(--color-blue);
+}
 .v .item .tag.friend {
   background-color: var(--color-aqua);
 }

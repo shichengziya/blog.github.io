@@ -1,0 +1,16 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "橙子安全屋 • All posts by \"bar\" category",
+    "description": "My daily record and my safehouse",
+    "home_page_url": "http://chengziyu.xyz",
+    "items": [
+        {
+            "id": "http://chengziyu.xyz/2013/12/24/categories/",
+            "url": "http://chengziyu.xyz/2013/12/24/categories/",
+            "title": "Categories",
+            "date_published": "2013-12-24T15:30:09.000Z",
+            "content_html": "<p>This post contains 3 categories. Make sure your theme can display all of the categories.</p>\n",
+            "tags": []
+        }
+    ]
+}
