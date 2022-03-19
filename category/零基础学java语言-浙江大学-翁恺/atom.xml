@@ -1,25 +1,10 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chengziyu.xyz</id>
-    <title>橙子安全屋</title>
+    <title>橙子安全屋 • Posts by &#34;零基础学java语言-浙江大学-翁恺&#34; category</title>
     <link href="https://chengziyu.xyz" />
-    <updated>2022-03-19T15:33:26.000Z</updated>
+    <updated>2020-04-13T11:12:45.000Z</updated>
     <category term="Hexo" />
-    <entry>
-        <id>https://chengziyu.xyz/Congratulation~/</id>
-        <title>The First!</title>
-        <link rel="alternate" href="https://chengziyu.xyz/Congratulation~/"/>
-        <content type="html">&lt;p&gt;#今天终于把 Blog 上架了～～上几张图庆祝一下&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056578.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056313.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056685.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056050.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056256.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191055411.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</content>
-        <category term="Hexo" />
-        <updated>2022-03-19T15:33:26.000Z</updated>
-    </entry>
     <entry>
         <id>https://chengziyu.xyz/computer-science/java/course-1/week-2/</id>
         <title>第2周 判断</title>

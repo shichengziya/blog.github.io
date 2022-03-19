@@ -1,30 +1,19 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://chengziyu.xyz</id>
-    <title>橙子安全屋</title>
-    <link href="https://chengziyu.xyz" />
-    <updated>2022-03-19T15:33:26.000Z</updated>
-    <category term="Hexo" />
-    <entry>
-        <id>https://chengziyu.xyz/Congratulation~/</id>
-        <title>The First!</title>
-        <link rel="alternate" href="https://chengziyu.xyz/Congratulation~/"/>
-        <content type="html">&lt;p&gt;#今天终于把 Blog 上架了～～上几张图庆祝一下&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056578.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056313.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056685.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056050.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191056256.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202203191055411.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</content>
-        <category term="Hexo" />
-        <updated>2022-03-19T15:33:26.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chengziyu.xyz/computer-science/java/course-1/week-2/</id>
-        <title>第2周 判断</title>
-        <link rel="alternate" href="https://chengziyu.xyz/computer-science/java/course-1/week-2/"/>
-        <content type="html">&lt;p&gt;:::note info&lt;br&gt;
+<rss version="2.0">
+    <channel>
+        <title>橙子安全屋 • Posts by &#34;java&#34; category</title>
+        <link>https://chengziyu.xyz</link>
+        <description>My daily record and my safehouse</description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 13 Apr 2020 19:12:45 +0800</pubDate>
+        <lastBuildDate>Mon, 13 Apr 2020 19:12:45 +0800</lastBuildDate>
+        <category>Hexo</category>
+        <item>
+            <guid isPermalink="true">https://chengziyu.xyz/computer-science/java/course-1/week-2/</guid>
+            <title>第2周 判断</title>
+            <link>https://chengziyu.xyz/computer-science/java/course-1/week-2/</link>
+            <pubDate>Mon, 13 Apr 2020 19:12:45 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;:::note info&lt;br&gt;
  以下为个人学习笔记和习题整理&lt;br&gt;
 课程：零基础学 Java 语言 - 浙江大学 - 翁恺 @ 中国大学 MOOC&lt;br&gt;
 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuaWNvdXJzZTE2My5vcmcvY291cnNlL1pKVS0xMDAxNTQxMDAx&#34;&gt;https://www.icourse163.org/course/ZJU-1001541001&lt;/span&gt;&lt;br&gt;
@@ -314,14 +303,14 @@ public class Main {
 
 }
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-        <updated>2020-04-13T11:12:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chengziyu.xyz/computer-science/java/course-1/week-1/</id>
-        <title>第1周 计算</title>
-        <link rel="alternate" href="https://chengziyu.xyz/computer-science/java/course-1/week-1/"/>
-        <content type="html">&lt;p&gt;:::note info&lt;br&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://chengziyu.xyz/computer-science/java/course-1/week-1/</guid>
+            <title>第1周 计算</title>
+            <link>https://chengziyu.xyz/computer-science/java/course-1/week-1/</link>
+            <pubDate>Sun, 12 Apr 2020 20:46:25 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;:::note info&lt;br&gt;
  以下为个人学习笔记和习题整理&lt;br&gt;
 课程：零基础学 Java 语言 - 浙江大学 - 翁恺 @ 中国大学 MOOC&lt;br&gt;
 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuaWNvdXJzZTE2My5vcmcvY291cnNlL1pKVS0xMDAxNTQxMDAx&#34;&gt;https://www.icourse163.org/course/ZJU-1001541001&lt;/span&gt;&lt;br&gt;
@@ -576,7 +565,7 @@ public class Main {
 
 }
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-        <updated>2020-04-12T12:46:25.000Z</updated>
-    </entry>
-</feed>
+ ]]></description>
+        </item>
+    </channel>
+</rss>
