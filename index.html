@@ -195,6 +195,590 @@
             
 
   
+    <article id="post-Code/DataScience/Data_Cleaning3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/11/Code/DataScience/Data_Cleaning3/" target="_blank">数据清洗(3)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/11/Code/DataScience/Data_Cleaning3/" class="archive-article-date">
+        <time datetime="2022-07-11T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="Wash"><a href="#Wash" class="headerlink" title="Wash"></a>Wash</h4><h5 id="text"><a href="#text" class="headerlink" title="text"></a>text</h5><ul>
+<li>原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号）</li>
+<li>这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?</li>
+<li>在MySQL中，转义字符两种：<ul>
+<li>反斜线</li>
+<li>单引号本身</li>
+</ul>
+</li>
+<li>拆分 <h5 id="date"><a href="#date" class="headerlink" title="date"></a>date</h5></li>
+<li>MySQL可以处理date、time或是datetime数据</li>
+<li>流程<ul>
+<li>修改原来的数据表并加入一个新的字段（存放新生成的日期时间信息）</li>
+<li>针对每一行数据执行更新语句（对字段进行格式化）</li>
+</ul>
+</li>
+</ul>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># connect to mysql</span></span><br><span class="line">pip install PyMySQL</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(host=<span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">                    user=<span class="string">&#x27;localuser&#x27;</span>,</span><br><span class="line">                    password=<span class="string">&#x27;local2022-&#x27;</span>,</span><br><span class="line">                    database=<span class="string">&#x27;sentiment140&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line">cursor.execute(<span class="string">&quot;SELECT VERSION()&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line">data = cursor.fetchone()</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;Database version : %s &quot;</span> % data)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">USE sentiment140;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> sentiment140 (</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  polarity enum(<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;4&#x27;</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  date_of_tweet <span class="type">varchar</span>(<span class="number">28</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  query_phrase <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  <span class="keyword">user</span> <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  tweet_text <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span></span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> )  ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"></span><br><span class="line"># LOAD DATA INFILE <span class="string">&#x27;cleanedTestData.csv&#x27;</span> </span><br><span class="line">LOAD DATA <span class="keyword">LOCAL</span> INFILE <span class="string">&#x27;cleanedTestData.csv&#x27;</span> </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> sentiment140</span><br><span class="line">FIELDS TERMINATED <span class="keyword">BY</span> <span class="string">&#x27;,&#x27;</span> </span><br><span class="line">ENCLOSED <span class="keyword">BY</span> <span class="string">&#x27;&quot;&#x27;</span></span><br><span class="line">LINES TERMINATED <span class="keyword">BY</span> <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 拆分   </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_mentions (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    mention <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_hashtags (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    hashtag <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_urls (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    url <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br></pre></td></tr></table></figure>
+<h5 id="提取标签"><a href="#提取标签" class="headerlink" title="提取标签"></a>提取标签</h5><ul>
+<li>标签以符号#开始</li>
+<li>标签单词会紧紧跟随符号#</li>
+<li>标签中可以包含下划线，但不可以包含空格或其他标点符号</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 在不区分大小写的情况下匹配Unicode字符</span><br><span class="line">if (preg_match_all(</span><br><span class="line">    &quot;/(#\pL+)/iu&quot;,</span><br><span class="line">    $<span class="type">row</span>[&quot;tweet_text&quot;],</span><br><span class="line">    $hashtags</span><br><span class="line">    ))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="提取URL"><a href="#提取URL" class="headerlink" title="提取URL"></a>提取URL</h5><ul>
+<li>http或https</li>
+<li>file://</li>
+<li>torrent<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">if (preg_match_all(</span><br><span class="line">    &quot;!https?://\S+!&quot;,</span><br><span class="line">    $<span class="type">row</span>[&quot;tweet_text&quot;],</span><br><span class="line">    $urls</span><br><span class="line">))</span><br><span class="line">urls <span class="operator">=</span> <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">pattern</span> <span class="operator">=</span> <span class="string">&#x27;#\b(([\w-]+://?|www[.])[^\s()&lt;&gt;]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))#&#x27;</span>;</span><br><span class="line">while($<span class="type">row</span> <span class="operator">=</span> mysqli_fetch_array($select_result))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;br/&gt;working on tweet id: &quot; . $<span class="type">row</span>[&quot;id&quot;];</span><br><span class="line">    if (preg_match_all(</span><br><span class="line">        $<span class="keyword">pattern</span>,</span><br><span class="line">        $<span class="type">row</span>[&quot;tweet_text&quot;],</span><br><span class="line">        $urls</span><br><span class="line">    ))</span><br><span class="line">    &#123;</span><br><span class="line">        foreach ($urls[<span class="number">0</span>] <span class="keyword">as</span> $name)</span><br><span class="line">        &#123;</span><br><span class="line">            echo &quot;&lt;br/&gt;----url: &quot;.$name;</span><br><span class="line">            $insert_query <span class="operator">=</span> &quot;INSERT into sentiment140_urls (id,</span><br><span class="line">            tweet_id, url)</span><br><span class="line">                    VALUES (NULL,&quot; . $<span class="type">row</span>[&quot;id&quot;] . &quot;,&#x27;$name&#x27;)&quot;;</span><br><span class="line">            echo &quot;&lt;br /&gt;$insert_query&quot;;</span><br><span class="line">            $insert_result <span class="operator">=</span> mysqli_query($dbc, $insert_query);</span><br><span class="line">            <span class="operator">/</span><span class="operator">/</span> 如果查询失败则终止处理</span><br><span class="line">            if (<span class="operator">!</span>$insert_result)</span><br><span class="line">                die (&quot;INSERT failed! [$insert_query]&quot; .</span><br><span class="line">                mysqli_error());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="查询表"><a href="#查询表" class="headerlink" title="查询表"></a>查询表</h5></li>
+</ul>
+<h4 id="记录文档"><a href="#记录文档" class="headerlink" title="记录文档"></a>记录文档</h4><p>每条SQL语句。</p>
+<ul>
+<li><p>每个Excel函数和文本编辑器程序，如果有必要可以加入演示截图。</p>
+</li>
+<li><p>每个脚本程序。</p>
+</li>
+<li><p>关于历史操作的笔记和注释。</p>
+<blockquote>
+<p>还有一种比较好的思路就是在每个阶段都创建一个备份表</p>
+</blockquote>
+</li>
+<li><p>md文件规范</p>
+<ul>
+<li> 文件名和其所在的包名</li>
+<li> 文件作者或是所有协作者的名字，组织和所在地</li>
+<li> 文件发布日期</li>
+<li> 文件版本号，及其早期版本的所在位置</li>
+<li> 文件的用途</li>
+<li> 原始数据来源，数据经过的处理</li>
+<li> 文件格式与组织方法，如各个字段和它们对应的含义</li>
+<li> 文件使用条款和许可协议</li>
+</ul>
+</li>
+<li><p>实体关系图（Entity-Relationship Diagram，ERD）</p>
+</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/11/Code/DataScience/Data_Cleaning3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Code/DataScience/Data_Cleaning2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/09/Code/DataScience/Data_Cleaning2/" target="_blank">数据清洗(2)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/09/Code/DataScience/Data_Cleaning2/" class="archive-article-date">
+        <time datetime="2022-07-09T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="传统工具"><a href="#传统工具" class="headerlink" title="传统工具"></a>传统工具</h2><h3 id="EXCEL"><a href="#EXCEL" class="headerlink" title="EXCEL"></a>EXCEL</h3><h4 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h4><ol>
+<li><p>文本分列</p>
+<ul>
+<li>数据-分列-分割符/指定列宽</li>
+<li>在分列前也可以考虑替换掉一些符号，方便通过分割符进行划分</li>
+<li>trim()函数可以去除字符串前面的空格字符</li>
+</ul>
+</li>
+<li><p>一对多转换为一对一（两列）</p>
+</li>
+</ol>
+<h3 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h3><ol>
+<li>导入数据<ul>
+<li>LOAD DATA IN FILE的命令把数据从分隔文件加载到数据库中</li>
+<li>支持自定义分隔符号<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">load data <span class="keyword">local</span> infile <span class="string">&#x27;myFile.csv&#x27;</span></span><br><span class="line">    <span class="keyword">into</span> <span class="keyword">table</span> freenode_topics</span><br><span class="line">    fields terminated <span class="keyword">by</span> <span class="string">&#x27;,&#x27;</span></span><br><span class="line">    (dateOfTopic, channel, numUsers, message);</span><br><span class="line"></span><br><span class="line">mysql <span class="operator">-</span>u <span class="operator">-</span>p <span class="operator">-</span>h</span><br><span class="line">use databasename;</span><br><span class="line">source inserts.sql</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><ul>
+<li>行分隔模型</li>
+<li>树形结构</li>
+</ul>
+<h5 id="Python和正则表达式"><a href="#Python和正则表达式" class="headerlink" title="Python和正则表达式"></a>Python和正则表达式</h5><ul>
+<li>从html页面确定需要的数据</li>
+<li>python<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python2</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line">row = []</span><br><span class="line">infile = io.<span class="built_in">open</span>(<span class="string">&#x27;DjangoLog.html&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">outfile = io.<span class="built_in">open</span>(<span class="string">&#x27;csvfile.csv&#x27;</span>, <span class="string">&#x27;a+&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> infile:</span><br><span class="line">    pattern = re.<span class="built_in">compile</span>(u<span class="string">r&#x27;&lt;li class=\&quot;le\&quot; rel=\&quot;(.+?)\&quot;&gt;&lt;a href=\&quot;#(.+?)\&quot; name=\&quot;(.+?)&lt;\/span&gt; (.+?)&lt;/li&gt;&#x27;</span>, re.UNICODE)</span><br><span class="line">    <span class="keyword">if</span> pattern.search(line):</span><br><span class="line">        username = pattern.search(line).group(<span class="number">1</span>)</span><br><span class="line">        linenum = pattern.search(line).group(<span class="number">2</span>)</span><br><span class="line">        message = pattern.search(line).group(<span class="number">4</span>)</span><br><span class="line">        row.append(linenum)</span><br><span class="line">        row.append(username)</span><br><span class="line">        row.append(message)</span><br><span class="line">        outfile.write(<span class="string">&#x27;, &#x27;</span>.join(row))</span><br><span class="line">        outfile.write(<span class="string">u&#x27;\n&#x27;</span>)</span><br><span class="line">        row = []</span><br><span class="line">infile.close()</span><br></pre></td></tr></table></figure>
+<h5 id="python-BeautifulSoup"><a href="#python-BeautifulSoup" class="headerlink" title="python+ BeautifulSoup"></a>python+ BeautifulSoup</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pipi install BeautifulSoup4</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line">infile = io.<span class="built_in">open</span>(<span class="string">&#x27;django13-sept-2014.html&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">outfile = io.<span class="built_in">open</span>(<span class="string">&#x27;django13-sept-2014.csv&#x27;</span>, <span class="string">&#x27;a+&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">soup = BeautifulSoup(infile)</span><br><span class="line">row = []</span><br><span class="line">allLines = soup.findAll(<span class="string">&quot;li&quot;</span>,<span class="string">&quot;le&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> allLines:</span><br><span class="line">    username = line[<span class="string">&#x27;rel&#x27;</span>]</span><br><span class="line">    linenum = line.contents[<span class="number">0</span>][<span class="string">&#x27;name&#x27;</span>]</span><br><span class="line">    message = line.contents[<span class="number">3</span>].lstrip()</span><br><span class="line">    row.append(linenum)</span><br><span class="line">    row.append(username)</span><br><span class="line">    row.append(message)</span><br><span class="line">    outfile.write(<span class="string">&#x27;, &#x27;</span>.join(row))</span><br><span class="line">    outfile.write(<span class="string">u&#x27;\n&#x27;</span>)</span><br><span class="line">    row = []</span><br><span class="line">infile.close()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="chrome-extension"><a href="#chrome-extension" class="headerlink" title="chrome_extension"></a>chrome_extension</h5><ul>
+<li>Chrome Scraper</li>
+</ul>
+<h3 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h3><ul>
+<li>使用pdfplumber扩展包来解析PDF文档的文本和表格</li>
+<li>如果只解析文本内容，也可以使用pdfminer </li>
+<li>解析英文文档内容，可以使用PyPDF2</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pip install pdfMiner</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>库名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tabula</td>
+<td>能提取完整表格，提取结果不规范</td>
+</tr>
+<tr>
+<td>pdfplumber</td>
+<td>能提取完整表格，提取结果较为规范</td>
+</tr>
+<tr>
+<td>camelot</td>
+<td>能提取完整表格和不完整表格，提取结果不规范</td>
+</tr>
+</tbody></table>
+<h3 id="RDBMS"><a href="#RDBMS" class="headerlink" title="RDBMS"></a>RDBMS</h3><ul>
+<li>关系型数据库管理系统（Relational Database Management System，RDBMS）</li>
+<li>Content<ul>
+<li>找RDBMS中的异常数据</li>
+<li>使用不同的策略来清洗不同类型的问题数据</li>
+<li>创建新的数据表来存放清洗后的数据，包括创建子表和查找表</li>
+<li>写文档，记录数据的变化</li>
+</ul>
+</li>
+</ul>
+<h4 id="Imoprt"><a href="#Imoprt" class="headerlink" title="Imoprt"></a>Imoprt</h4><ul>
+<li>观察数据<ul>
+<li>避免数据导入出错</li>
+<li>把””””替换成一个”（双引号），把所有的””替换成’（单引号）<br>!!! attention</li>
+<li>MySQL导入程序是通过引号来界定字段文本内容的</li>
+<li>多余的引号会让MySQL错误地认为这一行含有的字段个数多于实际的个数</li>
+</ul>
+</li>
+</ul>
+<h5 id="scp-linux"><a href="#scp-linux" class="headerlink" title="scp[linux]"></a>scp[linux]</h5><p> 参数<br>    scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]<br>    [-l limit] [-o ssh_option] [-P port] [-S program]<br>    [[user@]host1:]file1 … [[user@]host2:]file2<br>    #简易版<br>    scp [可选参数] file_source file_target </p>
+<pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-1： 强制scp命令使用协议ssh1</span><br><span class="line">-2： 强制scp命令使用协议ssh2</span><br><span class="line">-4： 强制scp命令只使用IPv4寻址</span><br><span class="line">-6： 强制scp命令只使用IPv6寻址</span><br><span class="line">-B： 使用批处理模式（传输过程中不询问传输口令或短语）</span><br><span class="line">-C： 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）</span><br><span class="line">-p： 保留原文件的修改时间，访问时间和访问权限。</span><br><span class="line">-q： 不显示传输进度条。</span><br><span class="line">-r： 递归复制整个目录。</span><br><span class="line">-v： 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。</span><br><span class="line">-c cipher： 以cipher将数据传输进行加密，这个选项将直接传递给ssh。</span><br><span class="line">-F ssh_config： 指定一个替代的ssh配置文件，此参数直接传递给ssh。</span><br><span class="line">-i identity_file： 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。</span><br><span class="line">-l limit： 限定用户所能使用的带宽，以Kbit/s为单位。</span><br><span class="line">-o ssh_option： 如果习惯于使用ssh_config(5)中的参数传递方式，</span><br><span class="line">-P port： 注意是大写的P, port是指定数据传输用到的端口号</span><br><span class="line">-S program： 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h5 id="source-MySQL"><a href="#source-MySQL" class="headerlink" title="source[MySQL]"></a>source[MySQL]</h5><h5 id="load-data-MySQL"><a href="#load-data-MySQL" class="headerlink" title="load data[MySQL]"></a>load data[MySQL]</h5><ul>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LOAD DATA</span><br><span class="line">    [LOW_PRIORITY | CONCURRENT] [LOCAL]</span><br><span class="line">    INFILE &#x27;file_name&#x27;</span><br><span class="line">    [REPLACE | IGNORE]</span><br><span class="line">    INTO TABLE tbl_name</span><br><span class="line">    [PARTITION (partition_name [, partition_name] ...)]</span><br><span class="line">    [CHARACTER SET charset_name]</span><br><span class="line">    [&#123;FIELDS | COLUMNS&#125;</span><br><span class="line">        [TERMINATED BY &#x27;string&#x27;]</span><br><span class="line">        [[OPTIONALLY] ENCLOSED BY &#x27;char&#x27;]</span><br><span class="line">        [ESCAPED BY &#x27;char&#x27;]</span><br><span class="line">    ]</span><br><span class="line">    [LINES</span><br><span class="line">        [STARTING BY &#x27;string&#x27;]</span><br><span class="line">        [TERMINATED BY &#x27;string&#x27;]</span><br><span class="line">    ]</span><br><span class="line">    [IGNORE number &#123;LINES | ROWS&#125;]</span><br><span class="line">    [(col_name_or_user_var</span><br><span class="line">        [, col_name_or_user_var] ...)]</span><br><span class="line">    [SET col_name=&#123;expr | DEFAULT&#125;,</span><br><span class="line">        [, col_name=&#123;expr | DEFAULT&#125;] ...]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Arg</th>
+<th>Intro</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LOW_PRIORITY</td>
+<td>使用LOW_PRIORITY修饰符，LOAD DATA语句的执行会被延迟，直到没有其他客户端从表中读取数据。这只影响仅使用表级锁的存储引擎(如MyISAM、MEMORY和MERGE)</td>
+</tr>
+<tr>
+<td>CONCURRENT</td>
+<td>使用CONCURRENT修饰符和满足并发插入条件的MyISAM表(也就是说，它中间不包含空闲块)，其他线程可以在执行LOAD data时从表中检索数据。即使没有其他线程同时使用这个表，这个修饰符也会略微影响LOAD DATA的性能</td>
+</tr>
+<tr>
+<td>LOCAL</td>
+<td>如果 load data 使用时指定了 local 关键字，则表示文件放在客户端主机上，从客户端读取文本文件；如果没指定，则表示从服务器主机读取文本文件</td>
+</tr>
+<tr>
+<td>REPLACE</td>
+<td>如果指定 replace ，与唯一键重复的行将被覆盖更新。对于任意记录覆盖更新时，如果唯一键外的各个字段其实都没有变化，那么执行操作时受影响行数为1；如果除唯一键外的任意字段有变化，那么执行操作时受影响行数为2</td>
+</tr>
+<tr>
+<td>IGNORE</td>
+<td>如果指定 ignore ，与唯一键重复的行将被忽略，默认指定 ignore</td>
+</tr>
+<tr>
+<td>PARTITION</td>
+<td>将数据插入指定分区</td>
+</tr>
+<tr>
+<td>CHARACTER SET</td>
+<td>若不指定字符集，MySQL默认使用character_set_database变量指定的字符集去读取文件，若文件字符集不同，则应指定该关键字</td>
+</tr>
+<tr>
+<td>FIELDS TERMINATED BY</td>
+<td>字段值的分隔符，若不指定则默认为 ‘\t’</td>
+</tr>
+<tr>
+<td>OPTIONALLY ENCLOSED BY</td>
+<td>字段值的包含字符，若不指定则默认为 ‘’</td>
+</tr>
+<tr>
+<td>ESCAPED BY</td>
+<td>字段值的转义字符，若不指定则默认为’\’</td>
+</tr>
+<tr>
+<td>LINES TERMINATED BY</td>
+<td>指定行分隔符，若不指定则默认为为系统的默认行分隔符（‘\r\n‘ on windows，’\n’ on linux）</td>
+</tr>
+<tr>
+<td>LINES STARTING BY</td>
+<td>若指定该值为xxx，则MySQL会自动去掉xxx及其前面的字符，若某行不包含xxx，则改行将被忽略，若不指定默认为’’</td>
+</tr>
+<tr>
+<td>IGNORE LINES | ROWS</td>
+<td>忽略文件开头的指定行，比如指定为2，那么MySQL只会解析并插入第三行及后面的数据</td>
+</tr>
+</tbody></table>
+<h5 id="mysqlimport"><a href="#mysqlimport" class="headerlink" title="mysqlimport"></a>mysqlimport</h5><pre><code>-  mysqlimport命令只能指定database
+-  表名是根据文件名获取，所以文件名必须和表名一致
+</code></pre>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据清洗,SQL,Linux,Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/09/Code/DataScience/Data_Cleaning2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Code/DataScience/Data_Cleaning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/07/Code/DataScience/Data_Cleaning/" target="_blank">数据清洗(1)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/07/Code/DataScience/Data_Cleaning/" class="archive-article-date">
+        <time datetime="2022-07-07T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-07</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol>
+<li> 分析问题</li>
+<li> 数据收集</li>
+<li> 数据清洗</li>
+<li> 数据分析&amp;机器学习</li>
+<li> 可视化实现</li>
+<li> 问题决议</li>
+</ol>
+<p>!!! attention 保留日志<br>    时间长了很可能会忘记对数据操作的流程</p>
+<h3 id="格式、类型、编码"><a href="#格式、类型、编码" class="headerlink" title="格式、类型、编码"></a>格式、类型、编码</h3><h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><ol>
+<li>文本文件与二进制文件</li>
+<li>常见拓展名<ol>
+<li>以.xlsx为扩展名的Excel文件</li>
+<li>以.docx为扩展名的Word文件</li>
+<li>以.pptx为扩展名的Powerpoint文件；</li>
+<li>以.png、.jpg和.gif为扩展名的图形文件；</li>
+<li>以.mp3、.ogg、.wmv和.mp4为扩展名的音乐和视频文件；</li>
+<li>以.txt为扩展名的文本文件。</li>
+</ol>
+</li>
+<li>文本文件类型<ol>
+<li>分隔格式（结构化数据）<ol>
+<li>制表符分隔值（TSV）</li>
+<li>逗号分隔值（CSV）</li>
+</ol>
+</li>
+<li>JSON格式（半结构化数据）</li>
+<li>HTML格式（非结构化数据）</li>
+</ol>
+</li>
+</ol>
+<p>查看不可见字符<br>    CSV、TSV的换行符和回车符都是看不见的<br>    查看方式<br>        1. Mac系统中使用Text Wrangler<br>        1. Windows上的Notepad++<br>        1. Linux系统或Mac上的Terminal窗口中使用vi<br>            1. 使用vim打开文件<br>            1. <code>set list</code> + enter<br>            1. vim 中不可见字符会显示为$</p>
+<ol>
+<li>分隔文件创建者需要在整个数据表创建之前，删除最后一列中的逗号（也就是说被分割的数据中不可以包含逗号字符）</li>
+<li>分隔文件创建者需要使用额外的符号来对数据进行封闭处理<ol>
+<li>通常的做法是采用双引号来对数据进行封闭</li>
+<li>比如某一行末端出现的129,000会被改成”129,000”</li>
+</ol>
+</li>
+</ol>
+<p>字符转义<br>    如果数据本身就含有引号,就需要使用另外一个特殊字符来对数据内部使用的引号进行转义，而转义字符就是反斜线   \</p>
+<ol>
+<li>JSON格式(半结构化数据)<ol>
+<li>半结构化数据集的特点是数据的值都有其对应的属性标识，而且顺序无关紧要</li>
+<li>字符串值必须使用==双引号==进行封闭处理</li>
+<li>字符串内部的双引号也都必须用反斜线进行转义</li>
+<li>如果转义字符（\）被当作数据内容使用，它本身也必须被转义<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;firstName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Sally&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;birthDate&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1971-09-16&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;faveColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;light\&quot;Carolina\&quot; blue&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;salary&quot;</span><span class="punctuation">:</span><span class="number">129000</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h4 id="归档与压缩"><a href="#归档与压缩" class="headerlink" title="归档与压缩"></a>归档与压缩</h4><ol>
+<li>tar（磁带归档） <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar cvf fileArchive.tar reallyBigFile.csv anotherBigFile.csv</span><br><span class="line">tar xvf fileArchive.tar</span><br></pre></td></tr></table></figure></li>
+<li>压缩<ol>
+<li>有gui的压缩软件</li>
+<li>tar自带的gzip和bzip2<ol>
+<li>只能一次压缩一个文件（或一个归档文件）</li>
+<li>tar的工作是把多个文件整合到一个独立的文件</li>
+<li>gzip<br> 压缩一个新创建的.tar文件，可以在tar命令的后面添加一个z选项 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tar cvzf fileArchive.tar.gz reallyBigFile.csv anotherBigFile.csv</span><br><span class="line"></span><br><span class="line">//或者分两步</span><br><span class="line">tar cvf fileArchive.tar reallyBigFile.csv anotherBigFile.csv</span><br><span class="line">gzip fileArchive.tar</span><br><span class="line"></span><br><span class="line">//解压</span><br><span class="line">gunzip fileArchive.tar.gz</span><br><span class="line">tar xvf fileArchive.tar</span><br></pre></td></tr></table></figure>
+<ol>
+<li>bzip2<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar cvzf fileArchive.tar.gz reallyBigFile.csv anotherBigFile.csv</span><br><span class="line"></span><br><span class="line">//或者分两步</span><br><span class="line">tar cvjf fileArchive.tar.bz2 reallyBigFile.csv anotherBigFile.csv</span><br><span class="line"></span><br><span class="line">//解压</span><br><span class="line">bunzip2 fileArchive.tar.bz</span><br><span class="line">tar xvf fileArchive.tar</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>默认情况下，大部分压缩程序和归档程序都会删除原始文件</p>
+<p>gzip压缩和解压缩都比较快，并且在每个装有OS X或Linux的机器上都可以使用</p>
+<p>RAR是Windows上广泛使用的归档和压缩解决方案；但是在OS X和Linux系统上只有特殊的软件才能处理这种格式</p>
+<hr>
+<h4 id="数据类型、空值与编码"><a href="#数据类型、空值与编码" class="headerlink" title="数据类型、空值与编码"></a>数据类型、空值与编码</h4><ol>
+<li><p>数字类型数据</p>
+<ol>
+<li>整数</li>
+<li>小数</li>
+</ol>
+</li>
+<li><p>日期和时间</p>
+</li>
+<li><p>字符串</p>
+</li>
+<li><p>其他数据类型</p>
+<ol>
+<li>集合/枚举</li>
+<li>布尔</li>
+<li>Blob（二进制大对象）</li>
+</ol>
+</li>
+<li><p>类型互换</p>
+<ol>
+<li><p>风险</p>
+<ol>
+<li>同类型之间的不同范围</li>
+<li>不同精度的转换</li>
+</ol>
+</li>
+<li><p>转换策略</p>
+<ol>
+<li><p>基于SQL的操作。这种策略适用于处理保存在数据库中的数据</p>
+<ol>
+<li><p>把concat()和日期时间函数结合起来使用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> concat(<span class="keyword">hour</span>(<span class="type">date</span>),</span><br><span class="line"><span class="string">&#x27;:&#x27;</span>,</span><br><span class="line"><span class="keyword">minute</span>(<span class="type">date</span>),</span><br><span class="line"># 必须要包含a.m<span class="operator">/</span>p.m，可以使用条件语句来判断小时部分的值</span><br><span class="line">if(<span class="keyword">hour</span>(<span class="type">date</span>)<span class="operator">&lt;</span><span class="number">12</span>,<span class="string">&#x27;am&#x27;</span>,<span class="string">&#x27;pm&#x27;</span>),</span><br><span class="line">contact(</span><br><span class="line">    <span class="string">&#x27;, &#x27;</span>,</span><br><span class="line">    dayname(<span class="type">date</span>),</span><br><span class="line">    <span class="string">&#x27;, &#x27;</span>,</span><br><span class="line">    monthname(<span class="type">date</span>),</span><br><span class="line">    <span class="string">&#x27; &#x27;</span>,</span><br><span class="line">    <span class="keyword">day</span>(<span class="type">date</span>),</span><br><span class="line">    <span class="string">&#x27;, &#x27;</span>,</span><br><span class="line">    <span class="keyword">year</span>(<span class="type">date</span>))</span><br><span class="line">)</span><br><span class="line"><span class="keyword">FROM</span> message</span><br><span class="line">    <span class="keyword">WHERE</span> mid<span class="operator">=</span><span class="number">52</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>使用MySQL提供的更为高级的date_format()函数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> concat(</span><br><span class="line">    date_format(<span class="type">date</span>, <span class="string">&#x27;%l:%i&#x27;</span>),</span><br><span class="line"># 如果需要am<span class="operator">/</span>pm小写的话需要指定</span><br><span class="line">    <span class="built_in">lower</span>(date_format(<span class="type">date</span>,<span class="string">&#x27;%p &#x27;</span>)),</span><br><span class="line">    date_format(<span class="type">date</span>,<span class="string">&#x27;%W, %M %e, %Y&#x27;</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">FROM</span> message</span><br><span class="line">    <span class="keyword">WHERE</span> mid<span class="operator">=</span><span class="number">52</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>从字符串类型转换到MySQL的日期类型</p>
+<ol>
+<li>str_to_date()<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 从第<span class="number">79</span>条记录所引用的电子邮件内容中提取时间</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">str_to_date(</span><br><span class="line">    substring_index(</span><br><span class="line">        substring_index(reference,<span class="string">&#x27;&gt;&#x27;</span>,<span class="number">3</span>),</span><br><span class="line">        <span class="string">&#x27;Sent: &#x27;</span>,</span><br><span class="line">        <span class="number">-1</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="string">&#x27;%W,%M %e, %Y %h:%i %p&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">FROM</span> referenceinfo</span><br><span class="line"><span class="keyword">WHERE</span> mid<span class="operator">=</span><span class="number">79</span>;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>把MySQL字符串类型的数据转换成小数</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">                # <span class="keyword">convert</span>()与<span class="built_in">cast</span>()的功能相似。把某种数据类型转成数字的功能</span><br><span class="line">                # March had slipped <span class="keyword">by</span> <span class="number">51</span> cts <span class="keyword">at</span> the same <span class="type">time</span> <span class="keyword">to</span> trade <span class="keyword">at</span> $<span class="number">18.47</span><span class="operator">/</span>bbl.</span><br><span class="line">                <span class="keyword">SELECT</span> <span class="keyword">convert</span>(</span><br><span class="line">                        substring_index(</span><br><span class="line">                            <span class="built_in">substring</span>(</span><br><span class="line">                                body,</span><br><span class="line">                                locate(<span class="string">&#x27;$&#x27;</span>,body)<span class="operator">+</span><span class="number">1</span></span><br><span class="line">                            ),</span><br><span class="line">                            <span class="string">&#x27;/bbl&#x27;</span>,</span><br><span class="line">                            <span class="number">1</span></span><br><span class="line">                        ),</span><br><span class="line">                        <span class="type">decimal</span>(<span class="number">4</span>,<span class="number">2</span>)</span><br><span class="line">                    ) <span class="keyword">as</span> price</span><br><span class="line">                <span class="keyword">FROM</span> message</span><br><span class="line">                <span class="keyword">WHERE</span> body <span class="keyword">LIKE</span> &quot;%$%&quot; <span class="keyword">AND</span> body <span class="keyword">LIKE</span> &quot;%/bbl%&quot; <span class="keyword">AND</span> sender <span class="operator">=</span><span class="string">&#x27;energybulletin@platts.com&#x27;</span>;</span><br><span class="line">                ```     </span><br><span class="line">        <span class="number">1.</span> 基于文件的操作。这种策略可以用来处理文本类型的数据文件</span><br><span class="line">            <span class="number">1.</span> 最常见的是电子表格(EXCEL)或JSON文件</span><br><span class="line">            <span class="number">1.</span> 需要把从文件中读取出来的数据再次以某种方法进行进一步加工</span><br><span class="line">                <span class="number">1.</span> PHP代码所生成的JSON数据都是直接来自数据库的</span><br><span class="line">    <span class="number">1.</span> 空值处理</span><br><span class="line">        <span class="number">1.</span> 空值类型</span><br><span class="line">            <span class="number">1.</span> <span class="keyword">NULL</span>: <span class="keyword">NULL</span>不等于任何值，甚至是它本身</span><br><span class="line">                <span class="number">1.</span> 只有在不希望出现任何数据的情况下才应该使用<span class="keyword">NULL</span></span><br><span class="line">                <span class="number">1.</span> 要区分没有数据和不清楚是否有数据</span><br><span class="line">            <span class="number">1.</span> <span class="number">0</span> : 零是可测量的数字，在数值系统中是有意义的</span><br><span class="line">            <span class="number">1.</span> 空值: 表现空字符串的正确方式就是把它“留空”</span><br><span class="line">                <span class="number">1.</span> &quot; &quot;（两个双引号中间夹着一个空格字符，有时候也称空白，但空格的说法可能更为恰当一些）不等同于&quot;&quot;</span><br><span class="line">                <span class="number">1.</span> JSON有些时候也是可能出现空对象和空字符串的</span><br><span class="line">                <span class="number">1.</span> 除了空格外，有时其他不可见字符也会被误当成空或空白来解析(制表符、回车、换行符) </span><br><span class="line">    <span class="number">1.</span> 编码格式转换</span><br><span class="line"></span><br><span class="line">不同的数据环境和编程环境（DBMS、存储系统和编程语言）在对待零、空值和<span class="keyword">NULL</span>这三个概念时稍有不同</span><br><span class="line"></span><br><span class="line">#### 数据转换</span><br><span class="line"></span><br><span class="line">##### 基于工具</span><br><span class="line"><span class="operator">-</span> 少量或中量数据的转换</span><br><span class="line"><span class="operator">-</span> Excel转csv（另存为）</span><br><span class="line">    <span class="operator">-</span> 表格中有多个工作表的话，需要分别把每一个工作表单独保存为CSV文件</span><br><span class="line"><span class="operator">-</span> 表格转json</span><br><span class="line">##### 基于编程</span><br><span class="line"><span class="operator">-</span> python</span><br><span class="line">    <span class="operator">-</span> CSV到JSON</span><br><span class="line">        <span class="operator">-</span> csv <span class="operator">+</span> json</span><br><span class="line">        <span class="operator">-</span> csvkit</span><br><span class="line">    ``` python</span><br><span class="line">    import json</span><br><span class="line">    import csv</span><br><span class="line">    <span class="keyword">with</span> <span class="keyword">open</span>(&quot;filename.csv&quot; <span class="keyword">as</span> f):</span><br><span class="line">        file_csv <span class="operator">=</span> csv.DictReader(file)</span><br><span class="line">        output <span class="operator">=</span> <span class="string">&#x27;[&#x27;</span></span><br><span class="line">        # 处理每一个目录</span><br><span class="line">        <span class="keyword">for</span> <span class="type">row</span> <span class="keyword">in</span> file_csv:</span><br><span class="line">            output <span class="operator">+</span><span class="operator">=</span> json.dumps(<span class="type">row</span>) <span class="operator">+</span> &quot;,&quot;</span><br><span class="line">        output <span class="operator">=</span> output.rstrip(<span class="string">&#x27;,&#x27;</span>)  <span class="operator">+</span> &quot;]&quot;</span><br><span class="line">    # 保存文件</span><br><span class="line">    file <span class="operator">=</span> <span class="keyword">open</span>(&quot;jsonfile.json&quot;,<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">    f write(output)</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line">    # pip install csvkit</span><br><span class="line">    import csvkit</span><br><span class="line">    csvjson csvfile.csv <span class="operator">&gt;</span> jsonfile.json</span><br><span class="line">    # csvkit 中还有csvcut（从CSV文件中提取任意指定字段中的数据）</span><br><span class="line">    # csvformat（用于改变CSV文件中的分隔符或换行符）</span><br><span class="line">    # csvkit中的命令行工具都支持以重定向的方式创建新文件</span><br><span class="line">    # 提取<span class="number">1</span>，<span class="number">3</span>行数据创建新数据</span><br><span class="line">    # csvcut file1.csv <span class="operator">-</span>c <span class="number">1</span>,<span class="number">3</span> <span class="operator">&gt;</span> file2.csv</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><p>json 到 csv</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json , csv</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;csvfile.csv&quot;</span>,<span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    dicts = json.load(f)</span><br><span class="line">out = <span class="built_in">open</span>(<span class="string">&quot;csvfile.csv&quot;</span>,<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">writer = csv.DictWriter(out, dicts[<span class="number">0</span>].keys())</span><br><span class="line">writer.writerheader()</span><br><span class="line">writer.writerrows(dicts)</span><br><span class="line">out.close()</span><br></pre></td></tr></table></figure></li>
+<li><p>SQL到JSON</p>
+<ul>
+<li>连接数据库</li>
+<li>SQL_CURD</li>
+<li>将结果转换为JSON</li>
+</ul>
+</li>
+<li><p>SQL到CSV</p>
+<ul>
+<li>连接数据库</li>
+<li>SQL_CURD</li>
+<li>将结果转换为JSON</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="Project1"><a href="#Project1" class="headerlink" title="Project1"></a>Project1</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;GGurls.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    urls = []</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> f:</span><br><span class="line">        urls.append(url.strip())</span><br><span class="line"></span><br><span class="line">currentFileNum = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Downloading: &#123;0&#125; Number: &#123;1&#125;&quot;</span>.<span class="built_in">format</span>(url, currentFileNum))</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    htmlFile = urllib2.urlopen(url)</span><br><span class="line">    urlFile = <span class="built_in">open</span>(<span class="string">&quot;msg%d.txt&quot;</span> %currentFileNum,<span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    urlFile.write(htmlFile.read())</span><br><span class="line">    urlFile.close()</span><br><span class="line">    currentFileNum = currentFileNum +<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从RSS中提取URL，收集并解析HTML</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">alllinks = []</span><br><span class="line">timelist = []</span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(os.getcwd()):</span><br><span class="line">    <span class="keyword">if</span> filename.endswith(<span class="string">&#x27;.rss&#x27;</span>):</span><br><span class="line">        f = <span class="built_in">open</span>(filename, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">        linktext = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        linkurl = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="comment"># 找出讨论主题的的URL</span></span><br><span class="line">            linktext = re.search(<span class="string">&#x27;(&lt;guid&gt;)(.+?)(&lt;\/guid&gt;)&#x27;</span>, line)</span><br><span class="line">            <span class="keyword">if</span> linktext:</span><br><span class="line">                linkurl= linktext.group(<span class="number">2</span>)</span><br><span class="line">                alllinks.append(linkurl)</span><br><span class="line">        f.close()</span><br><span class="line">mainmessage = <span class="string">&#x27;&#x27;</span></span><br><span class="line">reply = <span class="string">&#x27;&#x27;</span></span><br><span class="line">maindateobj = datetime.datetime.today()</span><br><span class="line">replydateobj = datetime.datetime.today()</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> alllinks:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;working on thread\n&quot;</span> + item)</span><br><span class="line">    response = urllib2.urlopen(item)</span><br><span class="line">    html = response.read()</span><br><span class="line">    <span class="comment"># 定义一个用于匹配时间戳的正则表达式样式</span></span><br><span class="line">    tuples = re.findall(<span class="string">&#x27;lia-message-posted-on\&quot;&gt;\s+&lt;spanclass=\&quot;local-date\&quot;&gt;\\xe2\\x80\\x8e(.*?)&lt;\/span&gt;\s+&lt;spanclass=\&quot;local-time\&quot;&gt;([\w:\sAM|PM]+)&lt;\/span&gt;&#x27;</span>, html)</span><br><span class="line">    mainmessage = tuples[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(tuples) &gt; <span class="number">1</span>:</span><br><span class="line">        reply = tuples[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> mainmessage:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;main: &quot;</span>)</span><br><span class="line">    maindateasstr = mainmessage[<span class="number">0</span>] + <span class="string">&quot; &quot;</span> + mainmessage[<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span> maindateasstr</span><br><span class="line">    maindateobj = datetime.datetime.strptime(maindateasstr,<span class="string">&#x27;%m-%d-%Y %I:%M %p&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> reply:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;reply: &quot;</span>)</span><br><span class="line">        replydateasstr = reply[<span class="number">0</span>] + <span class="string">&quot; &quot;</span> + reply[<span class="number">1</span>]</span><br><span class="line">        <span class="built_in">print</span>(replydateasstr)</span><br><span class="line">        replydateobj = datetime.datetime.strptime(replydateasstr,<span class="string">&#x27;%m-%d-%Y %I:%M %p&#x27;</span>)</span><br><span class="line"><span class="comment"># 只针对有回复的数据进行时间差计算</span></span><br><span class="line">        difference = replydateobj - maindateobj</span><br><span class="line">        totalseconds = difference.total_seconds()</span><br><span class="line">        timeinhours = (difference.days*<span class="number">86400</span>+difference.seconds)/<span class="number">3600</span></span><br><span class="line">    <span class="keyword">if</span> timeinhours &gt; <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">print</span>(timeinhours)</span><br><span class="line">        timelist.append(timeinhours)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;when all is said and done, in hours:&quot;</span>) </span><br><span class="line"><span class="built_in">print</span>(numpy.mean(timelist)) </span><br><span class="line"><span class="built_in">print</span>(numpy.std(timelist))</span><br><span class="line"><span class="built_in">print</span>(numpy.median(timelist))</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据清洗,SQL,Linux,Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/07/Code/DataScience/Data_Cleaning/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Daily-Record/Collections/MarkdownRecord" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -950,11 +1534,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Code,Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Code,Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">数据清洗,SQL,Linux,Python</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1165,8 +1753,8 @@
     },
     display: {
        position: "right", 
-       width: 145, 
-       height: 315, 
+       width: 200, 
+       height: 400, 
        hOffset: 50, 
       
     },
@@ -1175,7 +1763,7 @@
        scale: 0.6 
     },
     react: {
-       opacity: 0.8 
+       opacity: 0.9 
     }
   })
 
