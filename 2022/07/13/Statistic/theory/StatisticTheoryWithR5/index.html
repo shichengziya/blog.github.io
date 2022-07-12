@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>数据清洗(3) | 橙子安全屋</title>
+  <title>实用统计学（五） | 橙子安全屋</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Wash text  原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号） 这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?">
+  <meta name="description" content="分类 朴素贝叶斯 条件概率 后验概率 朴素贝叶斯是一种数据驱动的经验性方法，名字源于与贝叶斯规则类似的且用于预测的计算方式，更详细地说，就是在给定结果的情况下对预测值概率的初始计算，以及对结果概率的最终计算。 贝叶斯分类器仅适用于分类预测变量 将朴素贝叶斯用于数值型预测变量，需要采取下面两种方法之一。  将数值型预测变量划分为多个箱子，并转换为分类预测因子，然后再应用算法。 使用正态分布等概率模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据清洗(3)">
-<meta property="og:url" content="http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/index.html">
+<meta property="og:title" content="实用统计学（五）">
+<meta property="og:url" content="http://example.com/2022/07/13/Statistic/theory/StatisticTheoryWithR5/index.html">
 <meta property="og:site_name" content="橙子安全屋">
-<meta property="og:description" content="Wash text  原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号） 这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?">
+<meta property="og:description" content="分类 朴素贝叶斯 条件概率 后验概率 朴素贝叶斯是一种数据驱动的经验性方法，名字源于与贝叶斯规则类似的且用于预测的计算方式，更详细地说，就是在给定结果的情况下对预测值概率的初始计算，以及对结果概率的最终计算。 贝叶斯分类器仅适用于分类预测变量 将朴素贝叶斯用于数值型预测变量，需要采取下面两种方法之一。  将数值型预测变量划分为多个箱子，并转换为分类预测因子，然后再应用算法。 使用正态分布等概率模型">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-11T14:30:09.000Z">
-<meta property="article:modified_time" content="2022-07-12T00:52:41.000Z">
+<meta property="article:published_time" content="2022-07-13T09:30:20.000Z">
+<meta property="article:modified_time" content="2022-07-12T06:55:56.000Z">
 <meta property="article:author" content="是橙子呀">
-<meta property="article:tag" content="数据清洗">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="Statistic">
+<meta property="article:tag" content="R">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="橙子安全屋" type="application/atom+xml">
@@ -198,14 +196,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Code/DataScience/Data_Cleaning3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Statistic/theory/StatisticTheoryWithR5" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      数据清洗(3)
+      实用统计学（五）
     </h1>
   
 
@@ -217,8 +215,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/07/11/Code/DataScience/Data_Cleaning3/" class="archive-article-date">
-        <time datetime="2022-07-11T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
+<a href="/2022/07/13/Statistic/theory/StatisticTheoryWithR5/" class="archive-article-date">
+        <time datetime="2022-07-13T09:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-13</time>
 </a>
 
   
@@ -231,7 +229,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">759字</span>
+      <span class="post-count">1.5k字</span>
     </span>
   </span>
 
@@ -240,7 +238,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -251,78 +249,140 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="Wash"><a class="header-anchor" href="#Wash"></a>Wash</h3>
-<h4 id="text"><a class="header-anchor" href="#text"></a>text</h4>
+    <h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<h3 id="朴素贝叶斯"><a class="header-anchor" href="#朴素贝叶斯"></a>朴素贝叶斯</h3>
+<p>条件概率<br>
+后验概率</p>
+<p>朴素贝叶斯是一种数据驱动的经验性方法，名字源于与贝叶斯规则类似的且用于预测的计算方式，更详细地说，就是在给定结果的情况下对预测值概率的初始计算，以及对结果概率的最终计算。<br>
+<strong>贝叶斯分类器仅适用于分类预测变量</strong></p>
+<p>将朴素贝叶斯用于数值型预测变量，需要采取下面两种方法之一。</p>
 <ul>
-<li>原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号）</li>
-<li>这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?</li>
+<li>将数值型预测变量划分为多个箱子，并转换为分类预测因子，然后再应用算法。</li>
+<li>使用正态分布等概率模型，估计条件概率 。</li>
 </ul>
-<span id="more"></span>
+<p>如果训练数据中不存在预测因子类，那么在新数据中，算法会对结果变量赋予零概率。而其他一些方法会直接忽略该变量，并使用其他变量给出的信息。在对连续变量分箱时，需要注意这一点。</p>
 <ul>
-<li>在MySQL中，转义字符两种：
+<li>朴素贝叶斯要解答的问题是：“在每个结果类别中，哪些预测类别是最可能发生<br>
+的？”</li>
+<li>该问题可以转化为，在给定预测值的情况下，估计结果属于不同类别的概率</li>
+</ul>
+<h3 id="判别分析"><a class="header-anchor" href="#判别分析"></a>判别分析</h3>
+<h3 id="数值型预测变量"><a class="header-anchor" href="#数值型预测变量"></a>数值型预测变量</h3>
+<p>协方差<br>
+　　对一个变量相对于另一个变量的一致程度（幅度和方向类似）的度量。<br>
+　　协方差矩阵<br>
+　　协方差为正值表示正相关，为负值表示负相关<br>
+判别函数<br>
+　　当应用于预测变量上时，该函数可以使类之间的分离度最大化。<br>
+判别权重<br>
+　　应用判别函数得到的分值，用于估计记录属于某个类的概率。</p>
+<p>费希尔线性判别法区分了组间变异性和组内变异性　<br>
+判别分析使用协方差矩阵计算线性判别函数，该函数用于区分属于不同类的记录。<br>
+线性判别函数对每个记录生成一个权重或分值（每个可能的类对应一个权重），以此来确定记录的估计类</p>
+<h3 id="逻辑回归"><a class="header-anchor" href="#逻辑回归"></a>逻辑回归</h3>
+<p>如何将一个二元结果变量转换为一种可以以线性方式建模的结果变量，然后再转换回二元结果变量？<br>
+Logit函数<br>
+逻辑响应函数</p>
+<h4 id="广义线性模型"><a class="header-anchor" href="#广义线性模型"></a>广义线性模型</h4>
+<p>特征主要体现在下面两个方面。</p>
 <ul>
-<li>反斜线</li>
-<li>单引号本身</li>
+<li>一个概率分布或家族。例如，对于逻辑回归，它是二项分布。</li>
+<li>一个将响应映射到预测因子的连接函数（linkfunction）。例如，对于逻辑回归，它是Logit 函数。</li>
 </ul>
-</li>
-<li>拆分</li>
-</ul>
-<h4 id="date"><a class="header-anchor" href="#date"></a>date</h4>
+<p>逻辑回归的优点</p>
 <ul>
-<li>MySQL可以处理date、time或是datetime数据</li>
-<li>流程
+<li>其所生成的模型无须重新计算，就可以快速地为新数据打分</li>
+<li>与其他的分类方法相比，其所生成的模型易于解释。</li>
+</ul>
+<p>多元线性回归和逻辑回归有许多共同点。它们都假设预测因子与响应之间存在线性参数的关联关系，并且都用类似的方式探索并发现最优模型。将模型概化为线性以使用预测因子的样条转换方法，同样适用于逻辑回归。但是，逻辑回归在以下两方面存在根本差异。</p>
 <ul>
-<li>修改原来的数据表并加入一个新的字段（存放新生成的日期时间信息）</li>
-<li>针对每一行数据执行更新语句（对字段进行格式化）</li>
+<li>模型的拟合方式。逻辑回归不适用最小二乘法。</li>
+<li>模型残差的性质和分析方法。</li>
 </ul>
-</li>
-</ul>
-<h4 id="Project"><a class="header-anchor" href="#Project"></a>Project</h4>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># connect to mysql</span></span><br><span class="line">pip install PyMySQL</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(host=<span class="string">'localhost'</span>,</span><br><span class="line">                    user=<span class="string">'localuser'</span>,</span><br><span class="line">                    password=<span class="string">'local2022-'</span>,</span><br><span class="line">                    database=<span class="string">'sentiment140'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line">cursor.execute(<span class="string">"SELECT VERSION()"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line">data = cursor.fetchone()</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> (<span class="string">"Database version : %s "</span> % data)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">USE sentiment140;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> sentiment140 (</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  polarity enum(<span class="string">'0'</span>,<span class="string">'2'</span>,<span class="string">'4'</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  date_of_tweet <span class="type">varchar</span>(<span class="number">28</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  query_phrase <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  <span class="keyword">user</span> <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  tweet_text <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span></span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> )  ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"></span><br><span class="line"># LOAD DATA INFILE <span class="string">'cleanedTestData.csv'</span> </span><br><span class="line">LOAD DATA <span class="keyword">LOCAL</span> INFILE <span class="string">'cleanedTestData.csv'</span> </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> sentiment140</span><br><span class="line">FIELDS TERMINATED <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line">ENCLOSED <span class="keyword">BY</span> <span class="string">'"'</span></span><br><span class="line">LINES TERMINATED <span class="keyword">BY</span> <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"># 拆分   </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_mentions (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    mention <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_hashtags (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    hashtag <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_urls (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    url <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="提取标签"><a class="header-anchor" href="#提取标签"></a>提取标签</h5>
-<ul>
-<li>标签以符号#开始</li>
-<li>标签单词会紧紧跟随符号#</li>
-<li>标签中可以包含下划线，但不可以包含空格或其他标点符号</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 在不区分大小写的情况下匹配Unicode字符</span><br><span class="line">if (preg_match_all(</span><br><span class="line">    "/(#\pL+)/iu",</span><br><span class="line">    $<span class="type">row</span>["tweet_text"],</span><br><span class="line">    $hashtags</span><br><span class="line">    ))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h5 id="提取URL"><a class="header-anchor" href="#提取URL"></a>提取URL</h5>
-<ul>
-<li>http或https</li>
-<li>file://</li>
-<li>torrent</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">if (preg_match_all(</span><br><span class="line">    "!https?://\S+!",</span><br><span class="line">    $<span class="type">row</span>["tweet_text"],</span><br><span class="line">    $urls</span><br><span class="line">))</span><br><span class="line">urls <span class="operator">=</span> <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">pattern</span> <span class="operator">=</span> <span class="string">'#\b(([\w-]+://?|www[.])[^\s()&lt;&gt;]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))#'</span>;</span><br><span class="line">while($<span class="type">row</span> <span class="operator">=</span> mysqli_fetch_array($select_result))</span><br><span class="line">{</span><br><span class="line">    echo "&lt;br/&gt;working on tweet id: " . $<span class="type">row</span>["id"];</span><br><span class="line">    if (preg_match_all(</span><br><span class="line">        $<span class="keyword">pattern</span>,</span><br><span class="line">        $<span class="type">row</span>["tweet_text"],</span><br><span class="line">        $urls</span><br><span class="line">    ))</span><br><span class="line">    {</span><br><span class="line">        foreach ($urls[<span class="number">0</span>] <span class="keyword">as</span> $name)</span><br><span class="line">        {</span><br><span class="line">            echo "&lt;br/&gt;----url: ".$name;</span><br><span class="line">            $insert_query <span class="operator">=</span> "INSERT into sentiment140_urls (id,</span><br><span class="line">            tweet_id, url)</span><br><span class="line">                    VALUES (NULL," . $<span class="type">row</span>["id"] . ",'$name')";</span><br><span class="line">            echo "&lt;br /&gt;$insert_query";</span><br><span class="line">            $insert_result <span class="operator">=</span> mysqli_query($dbc, $insert_query);</span><br><span class="line">            <span class="operator">/</span><span class="operator">/</span> 如果查询失败则终止处理</span><br><span class="line">            if (<span class="operator">!</span>$insert_result)</span><br><span class="line">                die ("INSERT failed! [$insert_query]" .</span><br><span class="line">                mysqli_error());</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="查询表"><a class="header-anchor" href="#查询表"></a>查询表</h5>
-<h4 id="记录文档"><a class="header-anchor" href="#记录文档"></a>记录文档</h4>
-<p>每条SQL语句。</p>
-<ul>
-<li>每个Excel函数和文本编辑器程序，如果有必要可以加入演示截图。</li>
-<li>每个脚本程序。</li>
-<li>关于历史操作的笔记和注释。</li>
-</ul>
-<blockquote>
-<p>还有一种比较好的思路就是在每个阶段都创建一个备份表</p>
-</blockquote>
-<ul>
-<li>
-<p>md文件规范</p>
-<ul>
-<li>文件名和其所在的包名</li>
-<li>文件作者或是所有协作者的名字，组织和所在地</li>
-<li>文件发布日期</li>
-<li>文件版本号，及其早期版本的所在位置</li>
-<li>文件的用途</li>
-<li>原始数据来源，数据经过的处理</li>
-<li>文件格式与组织方法，如各个字段和它们对应的含义</li>
-<li>文件使用条款和许可协议</li>
-</ul>
-</li>
-<li>
-<p>实体关系图（Entity-Relationship Diagram，ERD）</p>
-</li>
-</ul>
+<p>逻辑回归并不存在一种封闭的解决方案，模型必须使用最大似然估计（MLE）拟合。<br>
+最大似然估计试图找出一种最有可能生成所见数据的模型。在逻辑回归方程中，响应并非0或1，而是对响应为1的对数几率的估计<br>
+最大似然估计可以找出一种解决方案，使估计的对数几率能最优地描述所观测到的结果。最大似然估计算法中使用了拟牛顿优化法，该机制根据当前的参数值，在打分步骤（即费希尔分值）间迭代，逐步更新参数值，以改进模型的拟合度</p>
+<h3 id="模型评估-v2"><a class="header-anchor" href="#模型评估-v2"></a>模型评估</h3>
+<p>模型对新数据的分类准确程度。回归系数，R 还会将回归系数的标准误差、z 值和 p 值</p>
+<h4 id="评估分类模型"><a class="header-anchor" href="#评估分类模型"></a>评估分类模型</h4>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正确率（accuracy）</td>
+<td>正确分类的百分比（或比例）。</td>
+</tr>
+<tr>
+<td>混淆矩阵</td>
+<td>按预测分类和实际分类情况对记录分别计数，将计数结果以表格形式显示。例如，对于二元变量使用的是 2×2 的表格。</td>
+</tr>
+<tr>
+<td>灵敏度</td>
+<td>在预测结果中，1 被正确分类的百分比（或比例）。召回率（recall）</td>
+</tr>
+<tr>
+<td>特异性</td>
+<td>在预测结果中，0 被正确分类的百分比（或比例）。</td>
+</tr>
+<tr>
+<td>准确率（precision）</td>
+<td>预测结果为 1、真实值也为 1 的百分比（或比例）</td>
+</tr>
+<tr>
+<td>ROC 曲线</td>
+<td>灵敏度与特异性的绘图。召回率和特异性之间存在着权衡，ROC是用于捕获这种权衡的度量，“受试者工作特征”曲线</td>
+</tr>
+<tr>
+<td>AUC</td>
+<td>ROC 曲线下的总面积。AUC 的值越大，分类器越有效。如果 AUC 为 1，表示一个完美的分类器：将所有1正确分类，且没有任何 0被误分类为 1。</td>
+</tr>
+<tr>
+<td>提升（lift）</td>
+<td>在不同截止概率的情况下，衡量模型在识别（相对罕见的）1上的有效性</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h3 id="不平衡数据的处理策略"><a class="header-anchor" href="#不平衡数据的处理策略"></a>不平衡数据的处理策略</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>欠采样</td>
+<td>在分类模型中，使用更少的多数类记录。（下采样）</td>
+</tr>
+<tr>
+<td>过采样</td>
+<td>在分类模型中，更多地使用稀有类记录。必要时可以使用自助法。上采样</td>
+</tr>
+<tr>
+<td>上权重、下权重</td>
+<td>在模型中，对稀有类赋予更大的权重，对多数类赋予更小的权重。</td>
+</tr>
+<tr>
+<td>数据生成</td>
+<td>类似于自助法，只是每个新的自助记录与原记录略有不同。</td>
+</tr>
+<tr>
+<td>z 分数</td>
+<td>对结果做归一化所生成的值。</td>
+</tr>
+<tr>
+<td>K</td>
+<td>在最近邻计算中使用的近邻个数。</td>
+</tr>
+</tbody>
+</table>
 
     
 
@@ -369,7 +429,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/" title="数据清洗(3)" target="_blank">http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/</a>
+          <a href="http://example.com/2022/07/13/Statistic/theory/StatisticTheoryWithR5/" title="实用统计学（五）" target="_blank">http://example.com/2022/07/13/Statistic/theory/StatisticTheoryWithR5/</a>
         </li>
         
         <li>
@@ -391,19 +451,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据清洗</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Statistic</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
         		</li>
       		
 		</ul>
@@ -459,7 +511,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/13/Statistic/theory/StatisticTheoryWithR5/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -474,18 +526,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/07/12/README/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/07/09/Code/DataScience/Data_Cleaning2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据清洗(2)</div>
+    <a href="/2022/07/12/Statistic/theory/StatisticTheoryWithR4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实用统计学（四）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -504,6 +547,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF"><span class="toc-number">1.1.</span> <span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">判别分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E9%A2%84%E6%B5%8B%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">数值型预测变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">1.4.</span> <span class="toc-text">逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">广义线性模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0-v2"><span class="toc-number">1.5.</span> <span class="toc-text">模型评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">评估分类模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%84%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-number">1.6.</span> <span class="toc-text">不平衡数据的处理策略</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>

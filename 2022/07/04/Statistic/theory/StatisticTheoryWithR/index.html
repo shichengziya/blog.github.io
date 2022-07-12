@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>数据清洗(3) | 橙子安全屋</title>
+  <title>实用统计学（一） | 橙子安全屋</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Wash text  原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号） 这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?">
+  <meta name="description" content="数据分布  箱线图 频数表、直方图 密度图   等计数组距:四分位数和十分位数在每个组距中具有相同的计数，但是每个组距的大小不同 规模组距:频数表在每个组距中的计数不同  矩（moment）  位置和变异性分别称为分布的一阶矩和二阶矩， 分布的三阶矩和四阶矩分别被称为偏度和峰度。 偏度显示了数据是偏向较小的值还是偏向较大的值 峰度则显示了数据中具有极值的倾向性 偏度和峰度会更倾向于使用可视化来观察">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据清洗(3)">
-<meta property="og:url" content="http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/index.html">
+<meta property="og:title" content="实用统计学（一）">
+<meta property="og:url" content="http://example.com/2022/07/04/Statistic/theory/StatisticTheoryWithR/index.html">
 <meta property="og:site_name" content="橙子安全屋">
-<meta property="og:description" content="Wash text  原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号） 这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?">
+<meta property="og:description" content="数据分布  箱线图 频数表、直方图 密度图   等计数组距:四分位数和十分位数在每个组距中具有相同的计数，但是每个组距的大小不同 规模组距:频数表在每个组距中的计数不同  矩（moment）  位置和变异性分别称为分布的一阶矩和二阶矩， 分布的三阶矩和四阶矩分别被称为偏度和峰度。 偏度显示了数据是偏向较小的值还是偏向较大的值 峰度则显示了数据中具有极值的倾向性 偏度和峰度会更倾向于使用可视化来观察">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-11T14:30:09.000Z">
-<meta property="article:modified_time" content="2022-07-12T00:52:41.000Z">
+<meta property="article:published_time" content="2022-07-04T09:30:20.000Z">
+<meta property="article:modified_time" content="2022-07-12T06:55:40.000Z">
 <meta property="article:author" content="是橙子呀">
-<meta property="article:tag" content="数据清洗">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="Statistic">
+<meta property="article:tag" content="R">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="橙子安全屋" type="application/atom+xml">
@@ -198,14 +196,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Code/DataScience/Data_Cleaning3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Statistic/theory/StatisticTheoryWithR" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      数据清洗(3)
+      实用统计学（一）
     </h1>
   
 
@@ -217,8 +215,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/07/11/Code/DataScience/Data_Cleaning3/" class="archive-article-date">
-        <time datetime="2022-07-11T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
+<a href="/2022/07/04/Statistic/theory/StatisticTheoryWithR/" class="archive-article-date">
+        <time datetime="2022-07-04T09:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-04</time>
 </a>
 
   
@@ -231,7 +229,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">759字</span>
+      <span class="post-count">1.5k字</span>
     </span>
   </span>
 
@@ -240,7 +238,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -251,78 +249,146 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="Wash"><a class="header-anchor" href="#Wash"></a>Wash</h3>
-<h4 id="text"><a class="header-anchor" href="#text"></a>text</h4>
+    <h2 id="数据分布"><a class="header-anchor" href="#数据分布"></a>数据分布</h2>
+<ol>
+<li>箱线图</li>
+<li>频数表、直方图</li>
+<li>密度图</li>
+</ol>
 <ul>
-<li>原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号）</li>
-<li>这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?</li>
+<li>等计数组距:四分位数和十分位数在每个组距中具有相同的计数，但是每个组距的大小不同</li>
+<li>规模组距:频数表在每个组距中的计数不同</li>
 </ul>
-<span id="more"></span>
+<p>矩（moment）</p>
 <ul>
-<li>在MySQL中，转义字符两种：
-<ul>
-<li>反斜线</li>
-<li>单引号本身</li>
+<li>位置和变异性分别称为分布的一阶矩和二阶矩，</li>
+<li>分布的三阶矩和四阶矩分别被称为偏度和峰度。</li>
+<li>偏度显示了数据是偏向较小的值还是偏向较大的值</li>
+<li>峰度则显示了数据中具有极值的倾向性</li>
+<li>偏度和峰度会更倾向于使用可视化来观察得出判断</li>
 </ul>
-</li>
-<li>拆分</li>
-</ul>
-<h4 id="date"><a class="header-anchor" href="#date"></a>date</h4>
-<ul>
-<li>MySQL可以处理date、time或是datetime数据</li>
-<li>流程
-<ul>
-<li>修改原来的数据表并加入一个新的字段（存放新生成的日期时间信息）</li>
-<li>针对每一行数据执行更新语句（对字段进行格式化）</li>
-</ul>
-</li>
-</ul>
-<h4 id="Project"><a class="header-anchor" href="#Project"></a>Project</h4>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># connect to mysql</span></span><br><span class="line">pip install PyMySQL</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(host=<span class="string">'localhost'</span>,</span><br><span class="line">                    user=<span class="string">'localuser'</span>,</span><br><span class="line">                    password=<span class="string">'local2022-'</span>,</span><br><span class="line">                    database=<span class="string">'sentiment140'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line">cursor.execute(<span class="string">"SELECT VERSION()"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line">data = cursor.fetchone()</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> (<span class="string">"Database version : %s "</span> % data)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">USE sentiment140;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> sentiment140 (</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  polarity enum(<span class="string">'0'</span>,<span class="string">'2'</span>,<span class="string">'4'</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  date_of_tweet <span class="type">varchar</span>(<span class="number">28</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  query_phrase <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  <span class="keyword">user</span> <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span>  tweet_text <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span></span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> )  ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"></span><br><span class="line"># LOAD DATA INFILE <span class="string">'cleanedTestData.csv'</span> </span><br><span class="line">LOAD DATA <span class="keyword">LOCAL</span> INFILE <span class="string">'cleanedTestData.csv'</span> </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> sentiment140</span><br><span class="line">FIELDS TERMINATED <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line">ENCLOSED <span class="keyword">BY</span> <span class="string">'"'</span></span><br><span class="line">LINES TERMINATED <span class="keyword">BY</span> <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"># 拆分   </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_mentions (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    mention <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_hashtags (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    hashtag <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sentiment140_urls (</span><br><span class="line">    id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    tweet_id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    url <span class="type">varchar</span>(<span class="number">144</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="提取标签"><a class="header-anchor" href="#提取标签"></a>提取标签</h5>
-<ul>
-<li>标签以符号#开始</li>
-<li>标签单词会紧紧跟随符号#</li>
-<li>标签中可以包含下划线，但不可以包含空格或其他标点符号</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 在不区分大小写的情况下匹配Unicode字符</span><br><span class="line">if (preg_match_all(</span><br><span class="line">    "/(#\pL+)/iu",</span><br><span class="line">    $<span class="type">row</span>["tweet_text"],</span><br><span class="line">    $hashtags</span><br><span class="line">    ))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h5 id="提取URL"><a class="header-anchor" href="#提取URL"></a>提取URL</h5>
-<ul>
-<li>http或https</li>
-<li>file://</li>
-<li>torrent</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">if (preg_match_all(</span><br><span class="line">    "!https?://\S+!",</span><br><span class="line">    $<span class="type">row</span>["tweet_text"],</span><br><span class="line">    $urls</span><br><span class="line">))</span><br><span class="line">urls <span class="operator">=</span> <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">pattern</span> <span class="operator">=</span> <span class="string">'#\b(([\w-]+://?|www[.])[^\s()&lt;&gt;]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))#'</span>;</span><br><span class="line">while($<span class="type">row</span> <span class="operator">=</span> mysqli_fetch_array($select_result))</span><br><span class="line">{</span><br><span class="line">    echo "&lt;br/&gt;working on tweet id: " . $<span class="type">row</span>["id"];</span><br><span class="line">    if (preg_match_all(</span><br><span class="line">        $<span class="keyword">pattern</span>,</span><br><span class="line">        $<span class="type">row</span>["tweet_text"],</span><br><span class="line">        $urls</span><br><span class="line">    ))</span><br><span class="line">    {</span><br><span class="line">        foreach ($urls[<span class="number">0</span>] <span class="keyword">as</span> $name)</span><br><span class="line">        {</span><br><span class="line">            echo "&lt;br/&gt;----url: ".$name;</span><br><span class="line">            $insert_query <span class="operator">=</span> "INSERT into sentiment140_urls (id,</span><br><span class="line">            tweet_id, url)</span><br><span class="line">                    VALUES (NULL," . $<span class="type">row</span>["id"] . ",'$name')";</span><br><span class="line">            echo "&lt;br /&gt;$insert_query";</span><br><span class="line">            $insert_result <span class="operator">=</span> mysqli_query($dbc, $insert_query);</span><br><span class="line">            <span class="operator">/</span><span class="operator">/</span> 如果查询失败则终止处理</span><br><span class="line">            if (<span class="operator">!</span>$insert_result)</span><br><span class="line">                die ("INSERT failed! [$insert_query]" .</span><br><span class="line">                mysqli_error());</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="查询表"><a class="header-anchor" href="#查询表"></a>查询表</h5>
-<h4 id="记录文档"><a class="header-anchor" href="#记录文档"></a>记录文档</h4>
-<p>每条SQL语句。</p>
-<ul>
-<li>每个Excel函数和文本编辑器程序，如果有必要可以加入演示截图。</li>
-<li>每个脚本程序。</li>
-<li>关于历史操作的笔记和注释。</li>
-</ul>
-<blockquote>
-<p>还有一种比较好的思路就是在每个阶段都创建一个备份表</p>
-</blockquote>
+<p>密度估计通常是使用一种核密度估计量$\sigma$从数据中直接计算得到</p>
+<h3 id="二元数据"><a class="header-anchor" href="#二元数据"></a>二元数据</h3>
 <ul>
 <li>
-<p>md文件规范</p>
+<p>众数</p>
+</li>
+<li>
+<p>期望</p>
+</li>
+<li>
+<p>条形图</p>
+</li>
+<li>
+<p>饼图</p>
+</li>
+<li>
+<p>相关性</p>
+</li>
+<li>
+<p>相关矩阵</p>
+</li>
+<li>
+<p>散点图</p>
+</li>
+<li>
+<p>相关系数</p>
 <ul>
-<li>文件名和其所在的包名</li>
-<li>文件作者或是所有协作者的名字，组织和所在地</li>
-<li>文件发布日期</li>
-<li>文件版本号，及其早期版本的所在位置</li>
-<li>文件的用途</li>
-<li>原始数据来源，数据经过的处理</li>
-<li>文件格式与组织方法，如各个字段和它们对应的含义</li>
-<li>文件使用条款和许可协议</li>
+<li>皮尔逊相关系数$r= \frac{\sum_{i=1}^N(x_i-\bar{x}))(y_i-\bar{y})}{(n-1)s_xs_y}$</li>
+<li>斯皮尔曼秩相关系数</li>
+<li>肯德尔秩相关系数</li>
 </ul>
 </li>
 <li>
-<p>实体关系图（Entity-Relationship Diagram，ERD）</p>
+<p>斯皮尔曼秩相关系数和肯德尔秩相关系数操作的是秩，而非数据值</p>
+</li>
+<li>
+<p>所以它们对离群值稳健，并可以处理特定类型的非线性。但是EDA使用皮尔逊相关系数及其一些稳健的替代者。</p>
+</li>
+<li>
+<p>多数情况下，基于秩的估计量适用于小规模的数据集以及特定的假设检验</p>
 </li>
 </ul>
+<h3 id="多元数据"><a class="header-anchor" href="#多元数据"></a>多元数据</h3>
+<ul>
+<li>列联表</li>
+<li>六边形图</li>
+<li>等势线图</li>
+<li>小提琴图（类似箱线图、显示密度估计量）</li>
+</ul>
+<p>六边形图和等势线（适用于两个数值型变量）</p>
+<h2 id="数据和抽样分布"><a class="header-anchor" href="#数据和抽样分布"></a>数据和抽样分布</h2>
+<h3 id="随机抽样和样本偏差"><a class="header-anchor" href="#随机抽样和样本偏差"></a>随机抽样和样本偏差</h3>
+<ul>
+<li>样本、总体、N（n）</li>
+<li>随机抽样（对总体分层，并在每层中做随机抽样。）</li>
+<li>分层抽样（在不对总体分层的情况下，做随机抽样所得到的样本）</li>
+<li>简单随机抽样、样本偏差</li>
+<li>简单随机样本（在随机抽样过程中，以均等的机会从总体的所有可用成员中抽取，得到一个样本。随机抽样生成的样本）</li>
+<li>统计偏差是一些系统性的测量误差或抽样误差，它是在测量或抽样过程中产生的</li>
+<li>样本均值与总体均值</li>
+</ul>
+<h3 id="选择偏差"><a class="header-anchor" href="#选择偏差"></a>选择偏差</h3>
+<p>偏差——系统性误差。<br>
+数据窥探——为得到感兴趣的结果，在数据中做大量的查找。<br>
+大规模搜索效应——由于重复的数据建模，或使用大量的预测变量对数据建模所导致的偏差或非可重现性</p>
+<p>置换检验<br>
+目标混洗（target shuffle）<br>
+趋均值回归</p>
+<ul>
+<li>对同一变量做连续测量时出现的一种现象，即在极端观测值后，会出现更趋向于中心的观测值</li>
+<li>值给予特殊的关注和意义，会导致某种形式的选择偏差</li>
+</ul>
+<h3 id="统计量的抽样分布"><a class="header-anchor" href="#统计量的抽样分布"></a>统计量的抽样分布</h3>
+<p>样本统计量<br>
+数据分布<br>
+抽样分布<br>
+中心极限定理<br>
+标准误差——多个样本间样本统计量的变异性（标准偏差）。$\frac{S}{\sqrt{n}}</p>
+<p><strong>不要与标准偏差混淆，后者指的是个体数据值间的变异性</strong></p>
+<p>总体中抽取样本，通常是为了测量某个样本统计量，或是使用统计学或机器学习模型进行建模。鉴于估计量或模型是基于某个样本的取样本的不同而有所差异。需要了解这种差异究竟如何，即主要关注点在于抽样as异性。</p>
+<p>单个数据点的分布（即数据分布）和样本统计量的分布（即抽样分布）。偏差测量的是单个数据点的变异性，而标准误差测量的是抽样度量的变异性。</p>
+<p>自助法</p>
+<ul>
+<li>估计统计量或模型参数的抽样分布</li>
+<li>从样本本身中有放回地抽取更多的样本，并对每次重抽样重新计算统计量或模型</li>
+<li>自助法无须假设数据或抽样统计量符合正态分布</li>
+</ul>
+<p>自助样本（bootstrap sample）<br>
+　　从观测数据集中做有放回的抽取而得到的样本。<br>
+重抽样<br>
+　　在观测数据中重复抽取样本的过程，其中包括自助过程和置换（混洗）过程。</p>
+<h3 id="置信区间"><a class="header-anchor" href="#置信区间"></a>置信区间</h3>
+<p>置信水平、区间端点、<br>
+计算自助法置信区间的算法<br>
+(1) 从数据中有放回地抽取规模为 n 的随机样本（重抽样）。<br>
+(2) 记录重抽样中感兴趣的统计量。<br>
+(3) 多次重复步骤 1 ～ 2，例如 r 次。<br>
+(4) 对于 x% 置信区间，从分布的两端分别对 r 个重抽样结果切尾 [(1-[x/100])/2]%。<br>
+(5) 切尾点就是 x% 自助法置信区间的区间端点。</p>
+<h3 id="正态分布"><a class="header-anchor" href="#正态分布"></a>正态分布</h3>
+<p>误差<br>
+　　数据点与预测值或均值间的差异。<br>
+标准化<br>
+　　数据值减去均值，再除以标准偏差。<br>
+z 分数<br>
+　　单个数据点标准化的结果。<br>
+标准正态分布<br>
+　　均值为 0、标准偏差为 1 的正态分布。<br>
+QQ 图<br>
+　　对样本分布与正态分布间接近程度的可视化绘图。</p>
+<p><strong>大部分数据是不符合正态分布的</strong></p>
+<h3 id="长尾分布"><a class="header-anchor" href="#长尾分布"></a>长尾分布</h3>
+<p>尾<br>
+　　一个频数分布的狭长部分，其中相对极值出现的频数很低。<br>
+偏斜<br>
+　　分布的一个尾部长于另一个尾部。</p>
+<h3 id="学生-t分布"><a class="header-anchor" href="#学生-t分布"></a>(学生)t分布</h3>
+<p>t 分布广泛用于描述样本统计量的分布。<br>
+样本均值的分布通常呈 t 分布形状<br>
+t 分布是一个分布家族，家族中的每个成员根据样本规模的不同而有所不同<br>
+样本的规模越大，t 分布就越趋向于正态分布形状。（但是尾部略厚）<br>
+t 分布被广泛地用作样本均值分布、两个样本均值间的差异、回归参数等的参考基础。</p>
 
     
 
@@ -369,7 +435,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/" title="数据清洗(3)" target="_blank">http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/</a>
+          <a href="http://example.com/2022/07/04/Statistic/theory/StatisticTheoryWithR/" title="实用统计学（一）" target="_blank">http://example.com/2022/07/04/Statistic/theory/StatisticTheoryWithR/</a>
         </li>
         
         <li>
@@ -391,19 +457,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据清洗</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Statistic</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
         		</li>
       		
 		</ul>
@@ -459,7 +517,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/11/Code/DataScience/Data_Cleaning3/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/04/Statistic/theory/StatisticTheoryWithR/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -474,18 +532,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/07/12/README/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/07/06/Statistic/theory/StatisticTheoryWithR2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          实用统计学（二）
         
       </div>
     </a>
   
   
-    <a href="/2022/07/09/Code/DataScience/Data_Cleaning2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据清洗(2)</div>
+    <a href="/2022/07/02/Daily-Record/Collections/MarkdownRecord/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MarkDown_Record</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -504,6 +562,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83"><span class="toc-number">1.</span> <span class="toc-text">数据分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.</span> <span class="toc-text">二元数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.</span> <span class="toc-text">多元数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%92%8C%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83"><span class="toc-number">2.</span> <span class="toc-text">数据和抽样分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%8A%BD%E6%A0%B7%E5%92%8C%E6%A0%B7%E6%9C%AC%E5%81%8F%E5%B7%AE"><span class="toc-number">2.1.</span> <span class="toc-text">随机抽样和样本偏差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%81%8F%E5%B7%AE"><span class="toc-number">2.2.</span> <span class="toc-text">选择偏差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83"><span class="toc-number">2.3.</span> <span class="toc-text">统计量的抽样分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-number">2.4.</span> <span class="toc-text">置信区间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-number">2.5.</span> <span class="toc-text">正态分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E5%B0%BE%E5%88%86%E5%B8%83"><span class="toc-number">2.6.</span> <span class="toc-text">长尾分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E7%94%9F-t%E5%88%86%E5%B8%83"><span class="toc-number">2.7.</span> <span class="toc-text">(学生)t分布</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
