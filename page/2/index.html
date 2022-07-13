@@ -200,6 +200,372 @@
             
 
   
+    <article id="post-code/DataScience/Data_Cleaning3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/11/code/DataScience/Data_Cleaning3/" target="_blank">数据清洗(3)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/11/code/DataScience/Data_Cleaning3/" class="archive-article-date">
+        <time datetime="2022-07-11T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="Wash"><a class="header-anchor" href="#Wash"></a>Wash</h3>
+<h4 id="text"><a class="header-anchor" href="#text"></a>text</h4>
+<ul>
+<li>原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号）</li>
+<li>这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?</li>
+</ul>
+    
+    <a class="article-more-a" href="/2022/07/11/code/DataScience/Data_Cleaning3/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据清洗</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code/DataScience//" class="article-tag-list-link color2">DataScience</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Statistic//" class="article-tag-list-link color5">Statistic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Statistic/theory//" class="article-tag-list-link color2">Theory</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/11/code/DataScience/Data_Cleaning3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-code/DataScience/Data_Cleaning2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/09/code/DataScience/Data_Cleaning2/" target="_blank">数据清洗(2)</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/09/code/DataScience/Data_Cleaning2/" class="archive-article-date">
+        <time datetime="2022-07-09T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="传统工具"><a class="header-anchor" href="#传统工具"></a>传统工具</h2>
+<h3 id="EXCEL"><a class="header-anchor" href="#EXCEL"></a>EXCEL</h3>
+<h4 id="数据清洗"><a class="header-anchor" href="#数据清洗"></a>数据清洗</h4>
+<ol>
+<li>文本分列
+<ul>
+<li>数据-分列-分割符/指定列宽</li>
+<li>在分列前也可以考虑替换掉一些符号，方便通过分割符进行划分</li>
+<li>trim()函数可以去除字符串前面的空格字符</li>
+</ul>
+</li>
+<li>一对多转换为一对一（两列）</li>
+</ol>
+    
+    <a class="article-more-a" href="/2022/07/09/code/DataScience/Data_Cleaning2/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据清洗</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code/DataScience//" class="article-tag-list-link color2">DataScience</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Statistic//" class="article-tag-list-link color5">Statistic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Statistic/theory//" class="article-tag-list-link color2">Theory</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/09/code/DataScience/Data_Cleaning2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily-record/technology/CommandLineTools" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/09/daily-record/technology/CommandLineTools/" target="_blank">命令行工具</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/09/daily-record/technology/CommandLineTools/" class="archive-article-date">
+        <time datetime="2022-07-09T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>常用工具的替代</p>
+    
+    <a class="article-more-a" href="/2022/07/09/daily-record/technology/CommandLineTools/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/09/daily-record/technology/CommandLineTools/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-statistic/theory/StatisticTheoryWithR3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -706,8 +1072,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="MarkdownRecord"><a class="header-anchor" href="#MarkdownRecord"></a>MarkdownRecord</h1>
-<h2 id="type"><a class="header-anchor" href="#type"></a>type</h2>
+    <h2 id="type"><a class="header-anchor" href="#type"></a>type</h2>
 <p><code>#行内代码</code><br>
 <em>这会是 斜体 的文字</em><br>
 <em>这会是 斜体 的文字</em><br>

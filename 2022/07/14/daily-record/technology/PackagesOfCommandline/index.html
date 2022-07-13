@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Category: Technology | 橙子安全屋</title>
+  <title>命令行工具列表 | 橙子安全屋</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="My daily record and my safehouse">
-<meta property="og:type" content="website">
-<meta property="og:title" content="橙子安全屋">
-<meta property="og:url" content="http://example.com/categories/daily-record/technology/index.html">
+  <meta name="description" content="部分常用工具记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令行工具列表">
+<meta property="og:url" content="http://example.com/2022/07/14/daily-record/technology/PackagesOfCommandline/index.html">
 <meta property="og:site_name" content="橙子安全屋">
-<meta property="og:description" content="My daily record and my safehouse">
+<meta property="og:description" content="部分常用工具记录">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-14T14:30:09.000Z">
+<meta property="article:modified_time" content="2022-07-13T13:28:56.027Z">
 <meta property="article:author" content="是橙子呀">
-<meta property="article:tag" content="records,thoughts,">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="橙子安全屋" type="application/atom+xml">
@@ -193,41 +195,176 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-daily-record/technology/PackagesOfCommandline" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/07/15/daily-record/technology/VimRecocrd/" class="archive-article-date">
-        <time datetime="2022-07-15T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/07/15/daily-record/technology/VimRecocrd/" target="_blank">VimRecord</a>
   
+    <h1 class="article-title" itemprop="name">
+      命令行工具列表
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/07/14/daily-record/technology/PackagesOfCommandline/" class="archive-article-date">
+        <time datetime="2022-07-14T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">444字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>部分常用工具记录</p>
+<span id="more"></span>
+<ol>
+<li>alias<br>
+定义或显示别名。alias是一个Bash内置命令。<code>alias fdfind=fd</code></li>
+<li>awk<br>
+模式扫描和文本处理语言 <code>apt-get install mawk</code></li>
+<li>aws<br>
+在命令行中管理AWS服务</li>
+<li>bigmler<br>
+<code>pip install bigmler</code></li>
+<li>body、cols、header、dseq<br>
+body——在包含文件头的CSV文件中应用经典命令行工具<br>
+header——添 加、 替 换 和 删 除 文 件 头 的 行<br>
+dseq——生成一个相对于今天的日期序列<br>
+<code>git clone git@github.com:jeroenjanssens/data-science-at-the-command-line.git</code><br>
+<code>echo -e "value\n7\n2\n5\n3" | body sort -n</code></li>
+<li>cowsay<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apt-get install cowsay</span><br><span class="line"> echo '牛爷爷给牛牛开门，牛到家了' | cowsay</span><br><span class="line"> ____________________________</span><br><span class="line"> &lt; 牛爷爷给牛牛开门，牛到家了 &gt;</span><br><span class="line"> ----------------------------</span><br><span class="line">     \   ^__^</span><br><span class="line">      \  (oo)\_______</span><br><span class="line">         (__)\       )\/\</span><br><span class="line">             ||----w |</span><br><span class="line">             ||     ||</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li>csvcut、csvgrep、csvjoin、in2csv、sql2csv<br>
+in2csv——将常见但不太好的表格数据格式转化为CSV<br>
+<code>apt install csvkit</code></li>
+<li>curl</li>
+<li>tree<br>
+以树状格式列出目录内容 <code>sudo apt-get install tree</code></li>
+<li>type——显示命令行工具的类型。Bash内置命令</li>
+<li>uniq——报告或忽略重复行 <code>apt-get install coreutils</code></li>
+<li>unzip\unrar\unpack(.sh)</li>
+<li>curlicue——为curl进行OAuth协议握手操作 <code>git clone https://github.com/decklin/curlicue.git</code></li>
+<li>git</li>
+<li>grep</li>
+<li>jq</li>
+<li>json2csv ``</li>
+<li>less_对大文件标页数<code>apt install less</code></li>
+<li>parallel——替代for <code>apt-get install parallel</code></li>
+<li>pwd——打印当前工作目录</li>
+<li>R Python</li>
+<li>run_experiment<br>
+用Python程序包scikit-learn运行机器学习实验 <code> pip install skll</code></li>
+<li>sed——打印一个数字序列 <code>seq 5</code></li>
+<li><a target="_blank" rel="noopener" href="http://tapkee.lisitsyn.m">Tapkee</a>——用各种算法对数据集降维<br>
+<code>sudo apt-get install libeigen3-dev libarpack2-dev</code></li>
+<li>paste、wc、shuf、sort、spilt、tee、tail<br>
+spilt——把一个文件切分成若干片<br>
+sort——对文本文件的行排序<br>
+paste——合并文件的行<br>
+shuf——生成随即序列<br>
+wc——对每个文件打印空行、 单词和字节个数<br>
+tee——从标准输入中读取，并写入标准输出和文件<br>
+<code>apt-get install coreutils</code><br>
+<code>echo 'hello world' | wc -c</code></li>
+<li>xml2json<br>
+<code>cnpm install xml2json-command</code></li>
+</ol>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖~~<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.png">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          是橙子呀
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2022/07/14/daily-record/technology/PackagesOfCommandline/" title="命令行工具列表" target="_blank">http://example.com/2022/07/14/daily-record/technology/PackagesOfCommandline/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -235,15 +372,11 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vim</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -253,140 +386,121 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        			<a href="/categories/daily-record/shell//" class="article-tag-list-link color1">shell</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/14/daily-record/technology/PackagesOfCommandline/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/07/13/daily-record/technology/ShortcutKeys/" class="archive-article-date">
-        <time datetime="2022-07-13T07:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-13</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2022/07/14/daily-record/emotion/FireflyLane/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          FireFlyLane
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/13/code/shell/Command_Line_Record/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">命令行（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/07/13/daily-record/technology/ShortcutKeys/" target="_blank">WindowsShortcutKeys</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/07/09/daily-record/technology/CommandLineTools/" class="archive-article-date">
-        <time datetime="2022-07-09T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/07/09/daily-record/technology/CommandLineTools/" target="_blank">命令行工具</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 
           </div>
@@ -427,10 +541,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",

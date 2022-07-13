@@ -229,6 +229,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
+    <p>Vim使用记录</p>
+    
+    <a class="article-more-a" href="/2022/07/15/daily-record/technology/VimRecocrd/#more">more >></a>
     
     
 
@@ -333,6 +336,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
+    <p>女孩子之间的纯友谊~</p>
+    
+    <a class="article-more-a" href="/2022/07/14/daily-record/emotion/FireflyLane/#more">more >></a>
     
     
 
@@ -393,6 +399,109 @@
 
 
   
+    <article id="post-daily-record/technology/PackagesOfCommandline" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/14/daily-record/technology/PackagesOfCommandline/" target="_blank">命令行工具列表</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/14/daily-record/technology/PackagesOfCommandline/" class="archive-article-date">
+        <time datetime="2022-07-14T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>部分常用工具记录</p>
+    
+    <a class="article-more-a" href="/2022/07/14/daily-record/technology/PackagesOfCommandline/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/shell//" class="article-tag-list-link color1">shell</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/14/daily-record/technology/PackagesOfCommandline/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-code/shell/Command_Line_Record" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -422,70 +531,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="命令行-shell"><a class="header-anchor" href="#命令行-shell"></a>命令行 &amp; shell</h3>
+    <p>OSEMN——获取、清洗、探索、建模和解释数据</p>
+<h3 id="命令行-shell"><a class="header-anchor" href="#命令行-shell"></a>命令行 &amp; shell</h3>
 <pre><code>1. shell是linux命令集的概称，是属于命令行的人机界面
 2. shell可以重复执行一些命令。也可以把要重复执行的命令写到脚本里面执行。而命令行的话就需要一个一个的输入命令，相对而言麻烦一些
 </code></pre>
-<p><strong>区别</strong><br>
-1. 直接在命令行执行，就是在当前的shell环境下执行<br>
-2. 在脚本里执行时， 会fork一个子进程，所有操作都在子进程进行 如果涉及到一些在脚本里设置环境变量的东西，脚本结束后环境变量随即消失了</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用纽约时报的api</span></span><br><span class="line">cd ~/data/NYTimes</span><br><span class="line">parallel -j1 --progress --delay 0.1 --results results "curl -sL "\</span><br><span class="line">"'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=New+York+'"\</span><br><span class="line">"'Fashion+Week&amp;begin_date={1}0101&amp;end_date={1}1231&amp;page={2}&amp;api-key='"\</span><br><span class="line">"LP36jj7ilIGBLeEk" ::: {2009..2013} ::: {0..99} &gt; /dev/null</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1.将每500个parallel任务（或API请求）的结果合并起来</span></span><br><span class="line">cat results/1/*/2/*/stdout | </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2.使用jq抽取出版日期、文档类型以及每篇文章的标题</span></span><br><span class="line">jq -c '.response.docs[] | {date: .pub_date, type: .document_type, '\ </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3.使用json2csv将JSON数据转换为CSV格式，将其存为fashion.csv</span></span><br><span class="line">'title: .headline.main }' | json2csv -p -k date,type,title &gt; fashion.csv </span><br><span class="line"></span><br><span class="line">wc -l fashion.csv</span><br><span class="line"></span><br><span class="line">&lt; fashion.csv Rio -ge 'g + geom_freqpoly(aes(as.Date(date), color=type), '\</span><br><span class="line">'binwidth=7) + scale_x_date() + labs(x="date", title="Coverage of New York'\</span><br><span class="line">' Fashion Week in New York Times")' | display</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>json2csv 需要用npm安装</p>
-</blockquote>
-<h3 id="数据科学工具箱"><a class="header-anchor" href="#数据科学工具箱"></a><a target="_blank" rel="noopener" href="http://datasciencetoolbox.org/">数据科学工具箱</a></h3>
-<p><a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">下载</a></p>
-<p>下载和安装VirtualBox、Vagrant*(虚拟机)<br>
-ls、cat、jq</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  apt</span></span><br><span class="line">sudo apt install path_to_deb_file</span><br><span class="line"><span class="comment">#  dpkg</span></span><br><span class="line">sudo dpkg -i path_to_deb_file</span><br></pre></td></tr></tbody></table></figure>
-<p>五类命令行工具</p>
-<table>
-<thead>
-<tr>
-<th>工具</th>
-<th>组成</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>二进制可执行文件</td>
-<td>由源代码编译为机器代码而成</td>
-</tr>
-<tr>
-<td>shell内置命令</td>
-<td>由shell提供的命令行工具，如cd、help</td>
-</tr>
-<tr>
-<td>解释型脚本</td>
-<td>由二进制可执行文件所执行的文本文件</td>
-</tr>
-<tr>
-<td>shell函数</td>
-<td>由shell自己执行的函数</td>
-</tr>
-<tr>
-<td>别名</td>
-<td>与宏类似</td>
-</tr>
-</tbody>
-</table>
-<p>常见命令行使用：</p>
-<ul>
-<li>命令行工具grep对行进行过滤，wc计算行数，sort对行进行排序</li>
-<li>最常见的将各工具组合起来方式是通过管道<br>
-<code> seq 100 | grep 3 | wc -l</code> 这里通过wc对序列为100中包含3的数字进行计数</li>
-</ul>
-<h3 id="输入和输出重定向"><a class="header-anchor" href="#输入和输出重定向"></a>输入和输出重定向</h3>
-<p>输出重定向——默认情况下，管道中最后一个命令行工具是输出到终端的，但是也可以将结果保存到文件。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果文件不存在，则自动创建；如果文件已经存在，内容将会被覆盖</span></span><br><span class="line">seq 10 &gt; data/ten-numbers</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">需要存储中间结果时，可以将输出保存到文件中</span></span><br><span class="line">echo -n "Hello" &gt; hello-world</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">&gt;&gt; 可以将输出附加到原来内容的后面</span></span><br><span class="line">echo " World" &gt;&gt; hello-world</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">很多命令行工具还允许将文件指定为命令行参数</span></span><br><span class="line">wc -w hello-world</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="处理文件"><a class="header-anchor" href="#处理文件"></a>处理文件</h3>
-<p>文件和目录进行创建、移动、复制、重命名和删除<br>
-所有这些命令行工具都接受选项-v，意为“详细”（verbose），能使工具输出正在进行的动作。除了mkdir之外的其他所有工具都接受选项-i，意为“交互（interactive），能让工具向用户请求确认。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动（move）&amp; 重命名</span></span><br><span class="line">mv hello-world data</span><br><span class="line">mv hello-world old-file</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除（remove）</span></span><br><span class="line">rm -r ~/book/ch02/data/old</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制（copy）&amp;创建备份</span></span><br><span class="line">cp server.log server.log.bak</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建路径</span></span><br><span class="line">mkdir newdirs</span><br></pre></td></tr></tbody></table></figure>
-<p>head -n 5是只显示前5行<br>
-fold将较长的行变为80字符长度<br>
-cut -c1-80则裁剪长度超过80字符的</p>
-
+    
+    <a class="article-more-a" href="/2022/07/13/code/shell/Command_Line_Record/#more">more >></a>
+    
     
 
     
@@ -531,6 +584,110 @@ cut -c1-80则裁剪长度超过80字符的</p>
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/07/13/code/shell/Command_Line_Record/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-code/shell/Command_Line_Record3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/13/code/shell/Command_Line_Record3/" target="_blank">命令行（三）</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/13/code/shell/Command_Line_Record3/" class="archive-article-date">
+        <time datetime="2022-07-13T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DataScience</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code/shell//" class="article-tag-list-link color1">shell</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/13/code/shell/Command_Line_Record3/">展开全文 >></a>
     </p>
     
 
@@ -699,121 +856,10 @@ cut -c1-80则裁剪长度超过80字符的</p>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <table>
-<thead>
-<tr>
-<th>key</th>
-<th>ToDo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Win+A</td>
-<td>打开快速设置</td>
-</tr>
-<tr>
-<td>Win+N</td>
-<td>打开通知中心</td>
-</tr>
-<tr>
-<td>Win+Z</td>
-<td>打开窗口布局</td>
-</tr>
-<tr>
-<td>Win+x</td>
-<td>打开任务栏提示框</td>
-</tr>
-<tr>
-<td>Shift+F10</td>
-<td>右键展开菜单窗口</td>
-</tr>
-<tr>
-<td>连续两次敲击Ctrl键</td>
-<td>唤出聚焦模式</td>
-</tr>
-<tr>
-<td>Win+D</td>
-<td>回到桌面</td>
-</tr>
-<tr>
-<td>Ctrl+Win+←/→</td>
-<td>切换新桌面</td>
-</tr>
-<tr>
-<td>Win+l</td>
-<td>锁屏</td>
-</tr>
-<tr>
-<td>Win+e</td>
-<td>打开「我的电脑」</td>
-</tr>
-<tr>
-<td>Win+number[1,…9]</td>
-<td>打开任务栏项目</td>
-</tr>
-<tr>
-<td>Win+i</td>
-<td>打开系统设置（Win 11）</td>
-</tr>
-<tr>
-<td>Ctrl+number[1,…,9]</td>
-<td>网页标签页切换</td>
-</tr>
-<tr>
-<td>Ctrl+w</td>
-<td>关闭窗口</td>
-</tr>
-<tr>
-<td>Ctrl+z</td>
-<td>撤销操作</td>
-</tr>
-<tr>
-<td>Ctrl+Y</td>
-<td>恢复之前所撤销的操作</td>
-</tr>
-<tr>
-<td>Ctrl+n</td>
-<td>快速创建同级界面</td>
-</tr>
-<tr>
-<td>单击+F2</td>
-<td>对文件重命名</td>
-</tr>
-<tr>
-<td>Win±&gt;/&lt;-</td>
-<td>分屏操作</td>
-</tr>
-<tr>
-<td>Win+Tab</td>
-<td>切换</td>
-</tr>
-<tr>
-<td>Ctrl+WIn +o</td>
-<td>打开屏幕键盘</td>
-</tr>
-<tr>
-<td>Win++</td>
-<td>放大镜</td>
-</tr>
-<tr>
-<td>Win+Esc</td>
-<td>关闭放大镜</td>
-</tr>
-<tr>
-<td>Ctrl+Win+O</td>
-<td>打开虚拟键盘</td>
-</tr>
-<tr>
-<td>单击+Ctrl+d</td>
-<td>删除文件</td>
-</tr>
-<tr>
-<td>Shift+Ctrl+Esc</td>
-<td>任务管理器</td>
-</tr>
-</tbody>
-</table>
-
+    <p>常用快捷键记录</p>
+    
+    <a class="article-more-a" href="/2022/07/13/daily-record/technology/ShortcutKeys/#more">more >></a>
+    
     
 
     
@@ -915,83 +961,10 @@ cut -c1-80则裁剪长度超过80字符的</p>
     
     <p>常用的获取数据工具： curl、sql2csv和tar</p>
 <h3 id="解压缩"><a class="header-anchor" href="#解压缩"></a>解压缩</h3>
-<p>tar<br>
-zip<br>
-rar</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment"># unpack: Extract common file formats</span></span><br><span class="line"><span class="comment"># Display usage if no parameters given</span></span><br><span class="line">  <span class="keyword">if</span> [[ -z <span class="string">"<span class="variable">$@</span>"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">" <span class="variable">${0##*/}</span> &lt;archive&gt; - extract common file formats)"</span></span><br><span class="line">    <span class="built_in">exit</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="comment"># Required program(s)</span></span><br><span class="line">req_progs=(7z unrar unzip)</span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> <span class="variable">${req_progs[@]}</span>; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">hash</span> <span class="string">"<span class="variable">$p</span>"</span> 2&gt;&amp;- || \</span><br><span class="line">  { <span class="built_in">echo</span> &gt;&amp;2 <span class="string">" Required program \"<span class="variable">$p</span>\" not installed."</span>; <span class="built_in">exit</span> 1; }</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">  <span class="comment"># Test if file exists</span></span><br><span class="line">  <span class="keyword">if</span> [ ! -f <span class="string">"<span class="variable">$@</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"File "</span><span class="variable">$@</span><span class="string">" doesn't exist"</span></span><br><span class="line">  <span class="built_in">exit</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">  <span class="comment"># Extract file by using extension as reference</span></span><br><span class="line">  <span class="keyword">case</span> <span class="string">"<span class="variable">$@</span>"</span> <span class="keyword">in</span></span><br><span class="line">  *.7z ) 7z x <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.tar.bz2 ) tar xvjf <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.bz2 ) bunzip2 <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.deb ) ar vx <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.tar.gz ) tar xvf <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.gz ) gunzip <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.tar ) tar xvf <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.tbz2 ) tar xvjf <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.tar.xz ) tar xvf <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.tgz ) tar xvzf <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.rar ) unrar x <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.zip ) unzip <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  *.Z ) uncompress <span class="string">"<span class="variable">$@</span>"</span> ;;</span><br><span class="line">  * ) <span class="built_in">echo</span> <span class="string">" Unsupported file format"</span> ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></tbody></table></figure>
-<p>创建脚本后的简单使用——<code>unpack logs.tar.gz</code></p>
-<h3 id="格式转换"><a class="header-anchor" href="#格式转换"></a>格式转换</h3>
-<h4 id="Excel"><a class="header-anchor" href="#Excel"></a>Excel</h4>
-<p>csv文件格式定义</p>
-<ul>
-<li>每条记录占据独立一行，由换行符（CRLF）分隔开</li>
-<li>文件中的最后一条记录有无末尾换行符皆可</li>
-<li>在文件的首行可以有标题行（可选的），其格式与普通记录行相同
-<ul>
-<li>标题行要包含文件中对应字段的名字，字段数量还应与文件中其他记录相同</li>
-<li>是否存在标题行应由该文件的MIME<br>
-类型的可选的header参数来指定）。<br>
-in2csv、csvcut和csvlook是csvkit中的一个常用工具，</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install csvkit</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">转换数据</span></span><br><span class="line">in2csv data/imdb-250.xlsx &gt; data/imdb-250.csv</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看数据  csvlook（生成表格形式的数据视图）</span></span><br><span class="line">in2csv data/imdb-250.xlsx | head | csvcut -c Title,Year,Rating | csvlook</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="sql"><a class="header-anchor" href="#sql"></a>sql</h4>
-<p>sql2csv也是csvkit的一个工具,可以在许多不同的数据库上执行查询，包括MySQL、Oracle、PostgreSQL、SQLite、微软SQL Server和Sybase。sql2csv也支持INSERT、UPDATE和DELETE查询</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sql2csv --db 'sqlite:///data/iris.db' --query 'SELECT * FROM iris '\</span><br><span class="line">  'WHERE sepal_length &gt; 7.5'</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--db 的参数</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">dialect+driver://username:password@host:port/database</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Download"><a class="header-anchor" href="#Download"></a>Download</h3>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载——curl</span></span><br><span class="line"><span class="comment"># 从古腾堡计划（Project Gutenberg）中下载马克·吐温的《哈克贝利·费恩历险记》</span></span><br><span class="line"><span class="comment"># 指定-s（代表silent）选项，这样就不会显示进度条</span></span><br><span class="line">curl -s http://www.gutenberg.org/cache/epub/76/pg76.txt | <span class="built_in">head</span> -n 10</span><br><span class="line"><span class="comment"># 用-o选项明确地指定输出文件来保存数据</span></span><br><span class="line">curl -s http://www.gutenberg.org/cache/epub/76/pg76.txt -o data/finn.txt</span><br><span class="line"><span class="comment"># 当URL有密码保护时，可以指定用户名和密码</span></span><br><span class="line">curl -u username:password ftp://host/file</span><br><span class="line"><span class="comment"># 访问简写的网址指定-L或--location选项来重定向，避免仅返回html</span></span><br><span class="line">curl -L j.mp/locatbbar</span><br><span class="line"><span class="comment"># 指定-I或--head选项，curl就只获取响应信息的HTTP头部数据</span></span><br><span class="line">curl -I baidu.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问api</span></span><br><span class="line"><span class="comment"># sudo apt install jq</span></span><br><span class="line">curl -s http://api.randomuser.me | jq <span class="string">'.'</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Shell-Script"><a class="header-anchor" href="#Shell-Script"></a>Shell-Script</h3>
-<p>创建流程：</p>
-<ol>
-<li>复制并粘贴单行到文件中</li>
-<li>添加执行权限
-<ol>
-<li>chmod</li>
-<li>u+x选项包括三个特性：(1)u表明想要改变文件拥有者（就是你）的权限，因为是你创建了该文件；(2)+表明想要添加权限；(3)x表明是执行权限</li>
-<li><code>-rwxrw-r--</code>
-<ol>
-<li>第一个字符，<mark>-</mark>，表明文件类型。-意为常规文件，d（这里没有出现）意为目录。</li>
-<li>随后的三个字符，rwx，表明文件拥有者的访问权限。r和w分别代表读和写。（如果-替换了x，意思是不能执行该文件。）</li>
-<li>后面的三个字符，rw-，表明拥有该文件的用户组中所有成员的访问权限。</li>
-<li>最后，第一列的最后三个字符，r–，表明其他所有用户的访问权限。</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>定义<mark>shebang</mark>
-<ol>
-<li>shebang是脚本中的特殊行，它告诉系统用哪个可执行文件来解释命令</li>
-<li>shebang这个名字源于该行的前两个字符：井号#（she）和惊叹号!（bang）</li>
-<li>指定bash执行脚本 <code>#!/usr/bin/env bash</code></li>
-<li>env命令行工具能够获知bash和python的安装目录</li>
-</ol>
-</li>
-<li>删除固定的输入部分。</li>
-<li>参数化
-<ol>
-<li><mark>$1</mark>是Bash中的一个特殊值</li>
-<li>存放的是传递给命令行工具的第一个命令行参数的值</li>
-</ol>
-</li>
-<li>视情况扩展PATH
-<ol>
-<li><code>echo $PATH | fold</code></li>
-<li>要永久修改PATH，需要编辑主目录中的.bashrc或.profile文件</li>
-</ol>
-</li>
-</ol>
-<h4 id="Python-R"><a class="header-anchor" href="#Python-R"></a>Python &amp; R</h4>
-<ol>
-<li>命令行工具并不需要扩展名。实际上，命令行工具很少有扩展名</li>
-<li>在命令行中，<mark>!!会被替换为刚才运行的命令</mark></li>
-</ol>
-<h5 id="流数据处理"><a class="header-anchor" href="#流数据处理"></a>流数据处理</h5>
-<p>Python 示例</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env python</span></span><br><span class="line">from sys import stdin, stdout</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">  line = stdin.readline()</span><br><span class="line">  <span class="keyword">if</span> not line:</span><br><span class="line">      <span class="built_in">break</span></span><br><span class="line">  stdout.write(<span class="string">"%d\n"</span> % int(line)**2)</span><br><span class="line">  stdout.flush()</span><br></pre></td></tr></tbody></table></figure>
-<p>R 示例</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env Rscript</span></span><br><span class="line">f - file(<span class="string">"stdin"</span>)=<span class="string">""</span> open(f)=<span class="string">""</span> <span class="keyword">while</span>(length(line=<span class="string">""</span>&gt;-&gt;- readlines(f,=<span class="string">""</span> n=<span class="string">"1))"</span>&gt; 0) {</span><br><span class="line">        write(as.integer(line)^2, stdout())</span><br><span class="line">}</span><br><span class="line">close(f)</span><br><span class="line">-&gt;</span><br></pre></td></tr></tbody></table></figure>
-
+<p>tar、zip、rar</p>
+    
+    <a class="article-more-a" href="/2022/07/13/code/shell/Command_Line_Record2/#more">more >></a>
+    
     
 
     
@@ -1096,35 +1069,9 @@ in2csv、csvcut和csvlook是csvkit中的一个常用工具，</li>
   <div class="article-entry" itemprop="articleBody">
     
     <p>在开始架设 Git 服务器前，需要把现有仓库导出为裸仓库——即一个不包含当前工作目录的仓库</p>
-<blockquote>
-<p>git同步到本地</p>
-</blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:shichengziya/shichengziya.github.io.git</span><br><span class="line">git <span class="built_in">clone</span> --bare chengziyu chengziyu.git</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> root@175.178.10.108:/Data/chengziyu.git</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>git 单向同步</p>
-</blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># fork 其他人的GitHub项目代码后，能单向同步更新他人代码</span></span><br><span class="line"><span class="comment"># 加个upstream，然后，每次用rebase更新</span></span><br><span class="line"></span><br><span class="line">git remote add upstream http://github.com/xxx/test.git</span><br><span class="line">git remote update upstream</span><br><span class="line">git rebase upstream/master</span><br><span class="line">git push origin dev:dev</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>vscode 同步服务器<br>
-vscode连接远程服务器选定了文件夹进去，若是直接使用source control来init就会默认把整个文件夹git进去，若是只想git里面的某个子文件夹就会非常麻烦。所以选择terminal操作的方式。首先在本地准备一个文件夹。</p>
-</blockquote>
-<ul>
-<li>先cd到要git的目录下，确定这个目录即为本地仓库，并执行。</li>
-<li>将它绑定成git的原理就是在此文件夹下生成一个.git文件夹。</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:MuMu-HuaHua/_posts.git</span><br><span class="line"></span><br><span class="line">git add Code</span><br><span class="line">git commit -m <span class="string">"First commit"</span></span><br><span class="line">git push </span><br><span class="line">git push --set-upstream origin master <span class="comment">#main</span></span><br><span class="line">git remote -v show</span><br><span class="line">git remote <span class="built_in">rm</span> origin</span><br><span class="line"></span><br><span class="line">error: src refspec master does not match any</span><br><span class="line">git show-ref</span><br><span class="line"></span><br><span class="line">git diff master origin/master</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="error"><a class="header-anchor" href="#error"></a>error</h2>
-<p>ERROR: Permission to MuMu-HuaHua/_posts.git denied to duoyulee.<br>
-fatal: Could not read from remote repository.</p>
-<p>Please make sure you have the correct access rightsand the repository exists.</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看全局配置 主要看user.name user.email user.password</span></span><br><span class="line">git config --list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">移除全局配置账户</span></span><br><span class="line">git config --global --unset user.name</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看全局用户名 已经显示为空了，说明移除成功</span></span><br><span class="line">git config --global user.name</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移除全局配置邮箱</span></span><br><span class="line">git config --global --unset user.email</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">再查看全局邮箱 已经显示为空了，说明移除成功</span></span><br><span class="line">git config --global user.email</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移除全局密码</span></span><br><span class="line">git config --global --unset user.password</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看全局密码 已经显示为空了，说明移除成功</span></span><br><span class="line">git config --global user.password</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3.设置git用户名、密码、邮箱的配置</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.name <span class="string">"freedom"</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.password <span class="string">"123456"</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.email <span class="string">"1548429568@qq.com"</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3.设置git用户名、密码、邮箱的配置（全局配置）</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name 用户命</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name freedom</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.password 密码</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.password abc0506abc</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.password 邮箱</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.email <span class="string">"1548429568@qq.com"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4.修改git用户名、密码、邮箱的配置</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.name <span class="string">"freedom"</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4.修改git用户名、密码、邮箱的配置（全局配置）</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name <span class="string">"freedom"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5.删除git用户名、密码、邮箱的配置</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global --<span class="built_in">unset</span> user.name <span class="string">"yourName"</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global --<span class="built_in">unset</span> user.email <span class="string">"your@email.com"</span></span></span><br></pre></td></tr></tbody></table></figure>
-<p>公钥<br>
-私钥<br>
-全局（用户名、密码、邮箱）</p>
-<h2 id="error-v2"><a class="header-anchor" href="#error-v2"></a>error</h2>
-<p>kex_exchange_identification: Connection closed by remote host</p>
-<p>Hi duoyulee! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
-
+    
+    <a class="article-more-a" href="/2022/07/12/daily-record/collections/Git_Record/#more">more >></a>
+    
     
 
     
@@ -1279,272 +1226,6 @@ fatal: Could not read from remote repository.</p>
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/07/12/statistic/theory/StatisticTheoryWithR4/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/DataScience/Data_Cleaning3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/07/11/code/DataScience/Data_Cleaning3/" target="_blank">数据清洗(3)</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/07/11/code/DataScience/Data_Cleaning3/" class="archive-article-date">
-        <time datetime="2022-07-11T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="Wash"><a class="header-anchor" href="#Wash"></a>Wash</h3>
-<h4 id="text"><a class="header-anchor" href="#text"></a>text</h4>
-<ul>
-<li>原始推文中可能含有high-ASCII或Unicode编码的撇号（有时候也称为智能引号）</li>
-<li>这些数据在向低位字符集转换的时候，比如纯ASCII，特殊风格的撇号就会被简单地转换成?</li>
-</ul>
-    
-    <a class="article-more-a" href="/2022/07/11/code/DataScience/Data_Cleaning3/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据清洗</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/DataScience//" class="article-tag-list-link color2">DataScience</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Statistic//" class="article-tag-list-link color5">Statistic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Statistic/theory//" class="article-tag-list-link color2">Theory</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/07/11/code/DataScience/Data_Cleaning3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/DataScience/Data_Cleaning2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/07/09/code/DataScience/Data_Cleaning2/" target="_blank">数据清洗(2)</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/07/09/code/DataScience/Data_Cleaning2/" class="archive-article-date">
-        <time datetime="2022-07-09T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="传统工具"><a class="header-anchor" href="#传统工具"></a>传统工具</h2>
-<h3 id="EXCEL"><a class="header-anchor" href="#EXCEL"></a>EXCEL</h3>
-<h4 id="数据清洗"><a class="header-anchor" href="#数据清洗"></a>数据清洗</h4>
-<ol>
-<li>
-<p>文本分列</p>
-<ul>
-<li>数据-分列-分割符/指定列宽</li>
-<li>在分列前也可以考虑替换掉一些符号，方便通过分割符进行划分</li>
-<li>trim()函数可以去除字符串前面的空格字符</li>
-</ul>
-</li>
-<li>
-<p>一对多转换为一对一（两列）</p>
-</li>
-</ol>
-    
-    <a class="article-more-a" href="/2022/07/09/code/DataScience/Data_Cleaning2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据清洗</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/DataScience//" class="article-tag-list-link color2">DataScience</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Statistic//" class="article-tag-list-link color5">Statistic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Statistic/theory//" class="article-tag-list-link color2">Theory</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/07/09/code/DataScience/Data_Cleaning2/">展开全文 >></a>
     </p>
     
 
