@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="My daily record and my safehouse">
+  <meta name="description" content="在开始架设 Git 服务器前，需要把现有仓库导出为裸仓库——即一个不包含当前工作目录的仓库  git同步到本地  1234git clone git@github.com:shichengziya&#x2F;shichengziya.github.io.gitgit clone --bare chengziyu chengziyu.gitgit clone root@175.178.10.108:&#x2F;Data">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git_Record">
 <meta property="og:url" content="http://example.com/2022/07/12/daily-record/collections/Git_Record/index.html">
 <meta property="og:site_name" content="橙子安全屋">
-<meta property="og:description" content="My daily record and my safehouse">
+<meta property="og:description" content="在开始架设 Git 服务器前，需要把现有仓库导出为裸仓库——即一个不包含当前工作目录的仓库  git同步到本地  1234git clone git@github.com:shichengziya&#x2F;shichengziya.github.io.gitgit clone --bare chengziyu chengziyu.gitgit clone root@175.178.10.108:&#x2F;Data">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-12T14:30:09.000Z">
-<meta property="article:modified_time" content="2022-07-12T07:59:40.000Z">
+<meta property="article:modified_time" content="2022-07-13T06:29:04.629Z">
 <meta property="article:author" content="是橙子呀">
 <meta property="article:tag" content="Code">
 <meta property="article:tag" content="Git">
@@ -229,7 +229,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">663字</span>
     </span>
   </span>
 
@@ -238,7 +238,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -249,7 +249,36 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <p>在开始架设 Git 服务器前，需要把现有仓库导出为裸仓库——即一个不包含当前工作目录的仓库</p>
+<blockquote>
+<p>git同步到本地</p>
+</blockquote>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:shichengziya/shichengziya.github.io.git</span><br><span class="line">git <span class="built_in">clone</span> --bare chengziyu chengziyu.git</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> root@175.178.10.108:/Data/chengziyu.git</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>git 单向同步</p>
+</blockquote>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># fork 其他人的GitHub项目代码后，能单向同步更新他人代码</span></span><br><span class="line"><span class="comment"># 加个upstream，然后，每次用rebase更新</span></span><br><span class="line"></span><br><span class="line">git remote add upstream http://github.com/xxx/test.git</span><br><span class="line">git remote update upstream</span><br><span class="line">git rebase upstream/master</span><br><span class="line">git push origin dev:dev</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>vscode 同步服务器<br>
+vscode连接远程服务器选定了文件夹进去，若是直接使用source control来init就会默认把整个文件夹git进去，若是只想git里面的某个子文件夹就会非常麻烦。所以选择terminal操作的方式。首先在本地准备一个文件夹。</p>
+</blockquote>
+<ul>
+<li>先cd到要git的目录下，确定这个目录即为本地仓库，并执行。</li>
+<li>将它绑定成git的原理就是在此文件夹下生成一个.git文件夹。</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:MuMu-HuaHua/_posts.git</span><br><span class="line"></span><br><span class="line">git add Code</span><br><span class="line">git commit -m <span class="string">"First commit"</span></span><br><span class="line">git push </span><br><span class="line">git push --set-upstream origin master <span class="comment">#main</span></span><br><span class="line">git remote -v show</span><br><span class="line">git remote <span class="built_in">rm</span> origin</span><br><span class="line"></span><br><span class="line">error: src refspec master does not match any</span><br><span class="line">git show-ref</span><br><span class="line"></span><br><span class="line">git diff master origin/master</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="error"><a class="header-anchor" href="#error"></a>error</h2>
+<p>ERROR: Permission to MuMu-HuaHua/_posts.git denied to duoyulee.<br>
+fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rightsand the repository exists.</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看全局配置 主要看user.name user.email user.password</span></span><br><span class="line">git config --list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">移除全局配置账户</span></span><br><span class="line">git config --global --unset user.name</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看全局用户名 已经显示为空了，说明移除成功</span></span><br><span class="line">git config --global user.name</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移除全局配置邮箱</span></span><br><span class="line">git config --global --unset user.email</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">再查看全局邮箱 已经显示为空了，说明移除成功</span></span><br><span class="line">git config --global user.email</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移除全局密码</span></span><br><span class="line">git config --global --unset user.password</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看全局密码 已经显示为空了，说明移除成功</span></span><br><span class="line">git config --global user.password</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3.设置git用户名、密码、邮箱的配置</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.name <span class="string">"freedom"</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.password <span class="string">"123456"</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.email <span class="string">"1548429568@qq.com"</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3.设置git用户名、密码、邮箱的配置（全局配置）</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name 用户命</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name freedom</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.password 密码</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.password abc0506abc</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.password 邮箱</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.email <span class="string">"1548429568@qq.com"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4.修改git用户名、密码、邮箱的配置</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config user.name <span class="string">"freedom"</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4.修改git用户名、密码、邮箱的配置（全局配置）</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global user.name <span class="string">"freedom"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5.删除git用户名、密码、邮箱的配置</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global --<span class="built_in">unset</span> user.name <span class="string">"yourName"</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git config --global --<span class="built_in">unset</span> user.email <span class="string">"your@email.com"</span></span></span><br></pre></td></tr></tbody></table></figure>
+<p>公钥<br>
+私钥<br>
+全局（用户名、密码、邮箱）</p>
+<h2 id="error-v2"><a class="header-anchor" href="#error-v2"></a>error</h2>
+<p>kex_exchange_identification: Connection closed by remote host</p>
+<p>Hi duoyulee! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+
     
 
     
@@ -407,11 +436,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/07/13/statistic/theory/StatisticTheoryWithR5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/07/13/code/shell/Command_Line_Record2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          实用统计学（五）
+          命令行（二）
         
       </div>
     </a>
@@ -646,6 +675,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DataScience</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
             
             <div class="clearfix"></div>
