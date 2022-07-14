@@ -18,7 +18,7 @@
 <meta property="og:description" content="OSEMN——获取、清洗、探索、建模和解释数据 命令行 &amp; shell 1. shell是linux命令集的概称，是属于命令行的人机界面 2. shell可以重复执行一些命令。也可以把要重复执行的命令写到脚本里面执行。而命令行的话就需要一个一个的输入命令，相对而言麻烦一些">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-13T14:30:09.000Z">
-<meta property="article:modified_time" content="2022-07-13T13:28:56.027Z">
+<meta property="article:modified_time" content="2022-07-14T13:44:29.927Z">
 <meta property="article:author" content="是橙子呀">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="DataScience">
@@ -307,7 +307,7 @@ ls、cat、jq</p>
 <h3 id="输入和输出重定向"><a class="header-anchor" href="#输入和输出重定向"></a>输入和输出重定向</h3>
 <p>输出重定向——默认情况下，管道中最后一个命令行工具是输出到终端的，但是也可以将结果保存到文件。</p>
 <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果文件不存在，则自动创建；如果文件已经存在，内容将会被覆盖</span></span><br><span class="line">seq 10 &gt; data/ten-numbers</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">需要存储中间结果时，可以将输出保存到文件中</span></span><br><span class="line">echo -n "Hello" &gt; hello-world</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">&gt;&gt; 可以将输出附加到原来内容的后面</span></span><br><span class="line">echo " World" &gt;&gt; hello-world</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">很多命令行工具还允许将文件指定为命令行参数</span></span><br><span class="line">wc -w hello-world</span><br></pre></td></tr></tbody></table></figure>
-<p>#####、 常用的特殊符号</p>
+<h5 id="常用的特殊符号"><a class="header-anchor" href="#常用的特殊符号"></a>常用的特殊符号</h5>
 <table>
 <thead>
 <tr>
@@ -414,7 +414,7 @@ ls、cat、jq</p>
 </tr>
 <tr>
 <td>1</td>
-<td>表示标准输出（stdou），配合&gt;或&gt;&gt;使用，数据流从左向右</td>
+<td>表示标准输出（stdout），配合&gt;或&gt;&gt;使用，数据流从左向右</td>
 </tr>
 <tr>
 <td>2</td>
@@ -606,8 +606,8 @@ cut -c1-80则裁剪长度超过80字符的</p>
     </a>
   
   
-    <a href="/2022/07/13/code/shell/Command_Line_Record3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">命令行（三）</div>
+    <a href="/2022/07/13/statistic/theory/StatisticTheoryWithR5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实用统计学（五）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -634,7 +634,7 @@ cut -c1-80则裁剪长度超过80字符的</p>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C-shell"><span class="toc-number">1.</span> <span class="toc-text">命令行 &amp; shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%B7%A5%E5%85%B7%E7%AE%B1"><span class="toc-number">2.</span> <span class="toc-text">数据科学工具箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">3.</span> <span class="toc-text">输入和输出重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%E5%8F%B7"><span class="toc-number">3.0.1.</span> <span class="toc-text">输出&#x2F;输入重定向符号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">处理文件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C-shell"><span class="toc-number">1.</span> <span class="toc-text">命令行 &amp; shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%B7%A5%E5%85%B7%E7%AE%B1"><span class="toc-number">2.</span> <span class="toc-text">数据科学工具箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">3.</span> <span class="toc-text">输入和输出重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="toc-number">3.0.1.</span> <span class="toc-text">常用的特殊符号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%93%E5%87%BA-%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%E5%8F%B7"><span class="toc-number">3.0.2.</span> <span class="toc-text">输出&#x2F;输入重定向符号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">处理文件</span></a></li></ol>
                     </div>
                 </span>
             </div>
