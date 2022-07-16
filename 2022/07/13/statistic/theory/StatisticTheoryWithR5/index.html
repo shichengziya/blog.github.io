@@ -5,7 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
+  <link rel="dns-prefetch" href="https://shichengziya.github.io">
   <title>实用统计学（五） | 橙子安全屋</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
   <meta name="description" content="分类 朴素贝叶斯 条件概率 后验概率">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用统计学（五）">
-<meta property="og:url" content="http://example.com/2022/07/13/statistic/theory/StatisticTheoryWithR5/index.html">
+<meta property="og:url" content="https://shichengziya.github.io/2022/07/13/statistic/theory/StatisticTheoryWithR5/index.html">
 <meta property="og:site_name" content="橙子安全屋">
 <meta property="og:description" content="分类 朴素贝叶斯 条件概率 后验概率">
 <meta property="og:locale" content="zh_CN">
@@ -57,14 +57,14 @@
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
-<body>
+<body style="background: url(https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/aibara1.jpg); background-size: cover;background-repeat: no-repeat;opacity: 0.80">
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
+    <div class="left-col" q-class="show:isShow" style="background: url(https://cdn.jsdelivr.net/gh/MuMu-HuaHua/picgo/202207160917401.jpg)no-repeat 100%;background-size:cover;background:rgba(255,255,255,0.5)">
       
 
 
-<div class="overlay" style="background: #4d4d4d;"></div>
+<div class="overlay" style="background: rgba(0,0,0,0);"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -82,9 +82,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
-				<li><a href="/tags/BD" target="_blank">BD</a></li>
+				<li><a href="/tags/SQL" target="_blank">BD</a></li>
 			
-				<li><a href="/tags/%E6%9D%82%E8%AE%B0/" target="_blank">杂记</a></li>
+				<li><a href="/tags/Linux" target="_blank">杂记</a></li>
 			
 			</ul>
 		</nav>
@@ -118,7 +118,7 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=484805905&auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=484805905&auto=0&height=66"></iframe>
 			</div>
 			
 				
@@ -134,7 +134,7 @@
       
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: rgba(0,0,0,0)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -178,9 +178,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/BD">BD</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/SQL">BD</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/Linux">杂记</a></li>
 		        
 				</ul>
 			</nav>
@@ -303,7 +303,7 @@ Logit函数<br>
 <p>逻辑回归并不存在一种封闭的解决方案，模型必须使用最大似然估计（MLE）拟合。<br>
 最大似然估计试图找出一种最有可能生成所见数据的模型。在逻辑回归方程中，响应并非0或1，而是对响应为1的对数几率的估计<br>
 最大似然估计可以找出一种解决方案，使估计的对数几率能最优地描述所观测到的结果。最大似然估计算法中使用了拟牛顿优化法，该机制根据当前的参数值，在打分步骤（即费希尔分值）间迭代，逐步更新参数值，以改进模型的拟合度</p>
-<h3 id="模型评估"><a class="header-anchor" href="#模型评估"></a>模型评估</h3>
+<h3 id="模型评估-v2"><a class="header-anchor" href="#模型评估-v2"></a>模型评估</h3>
 <p>模型对新数据的分类准确程度。回归系数，R 还会将回归系数的标准误差、z 值和 p 值</p>
 <h4 id="评估分类模型"><a class="header-anchor" href="#评估分类模型"></a>评估分类模型</h4>
 <table>
@@ -425,12 +425,12 @@ Logit函数<br>
     <div class="declare"> 
       <ul class="post-copyright">
         <li>
-          <strong>本文作者：</strong>
+          <strong>From：</strong>
           是橙子呀
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/07/13/statistic/theory/StatisticTheoryWithR5/" title="实用统计学（五）" target="_blank">http://example.com/2022/07/13/statistic/theory/StatisticTheoryWithR5/</a>
+          <a href="https://shichengziya.github.io/2022/07/13/statistic/theory/StatisticTheoryWithR5/" title="实用统计学（五）" target="_blank">https://shichengziya.github.io/2022/07/13/statistic/theory/StatisticTheoryWithR5/</a>
         </li>
         
         <li>
@@ -527,7 +527,7 @@ Logit函数<br>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/13/statistic/theory/StatisticTheoryWithR5/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://shichengziya.github.io/2022/07/13/statistic/theory/StatisticTheoryWithR5/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -580,7 +580,7 @@ Logit函数<br>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF"><span class="toc-number">1.1.</span> <span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">判别分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E9%A2%84%E6%B5%8B%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">数值型预测变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">1.4.</span> <span class="toc-text">逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">广义线性模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="toc-number">1.5.</span> <span class="toc-text">模型评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">评估分类模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%84%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-number">1.6.</span> <span class="toc-text">不平衡数据的处理策略</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF"><span class="toc-number">1.1.</span> <span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">判别分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E9%A2%84%E6%B5%8B%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">数值型预测变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">1.4.</span> <span class="toc-text">逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">广义线性模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0-v2"><span class="toc-number">1.5.</span> <span class="toc-text">模型评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">评估分类模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%84%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-number">1.6.</span> <span class="toc-text">不平衡数据的处理策略</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -609,7 +609,7 @@ Logit函数<br>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 <a href="http://example.com/" target="_blank">是橙子呀</a>
+    		&copy; 2022 <a href="https://shichengziya.github.io/" target="_blank">是橙子呀</a>
     	</div>
       	<div class="footer-right">
 			
@@ -893,7 +893,7 @@ Logit函数<br>
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://chengzilee.gitee.io/blog/" target="_blank" 
+              <a href="/" target="_blank" 
                 class="search-title" title="橙子碎碎念">
                 
                   <img src="/img/">
@@ -1007,11 +1007,40 @@ Logit函数<br>
   </div>
 
   
+<script type="text/javascript" src="/plugins/TweenMax/TweenMax.min.js"></script>
+<script type="text/javascript" src="/plugins/TweenMax/HoverImg.js"></script>
+
+<script>
+
+
+  var hoverEffect = {
+    "subNav": ".left-col .social a"
+  }
+
+
+  for (var x in hoverEffect) {
+    // 初始化data-img属性值
+    let $em = document.querySelectorAll(hoverEffect[x]);
+    $em.forEach(($a) => {
+      //console.log($a.href);
+      if (isImageType($a.href)) {
+        $a.setAttribute("data-img", $a.href)
+      }
+    })
+    // 实现悬停元素预览图片效果
+    let $a = document.querySelectorAll(hoverEffect[x] + "[data-img]");
+    $a.forEach(($em) => {
+      new HoverImgFx1($em)
+    })
+  }
+
+</script>
+
   
 <script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
 <script>
   POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = true; // turn off shake
+  POWERMODE.shake = false; // turn off shake
   document.body.addEventListener('input', POWERMODE);
 </script>
 
@@ -1058,7 +1087,7 @@ Logit函数<br>
       
     },
     mobile: {
-       show: false, 
+      
        scale: 0.6 
     },
     react: {
