@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="sqoop 是在Hadoop 和关系数据库服务器之间传送数据的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。工作机制是将导入或导出命令翻译成 MapReduce 程序来实现，在翻译出的 MapReduce 中主要是对 InputFormat 和 OutputFormat 进行定制  导入数据  从MySQL，Oracle 导入数据到 Hadoop 的 HDFS、HIVE、HB">
+  <meta name="description" content="sqoop 是在Hadoop 和关系数据库服务器之间传送数据的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sqoop_Record">
 <meta property="og:url" content="https://shichengziya.github.io/2022/07/19/code/BigData/Sqoop/index.html">
 <meta property="og:site_name" content="橙子安全屋">
-<meta property="og:description" content="sqoop 是在Hadoop 和关系数据库服务器之间传送数据的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。工作机制是将导入或导出命令翻译成 MapReduce 程序来实现，在翻译出的 MapReduce 中主要是对 InputFormat 和 OutputFormat 进行定制  导入数据  从MySQL，Oracle 导入数据到 Hadoop 的 HDFS、HIVE、HB">
+<meta property="og:description" content="sqoop 是在Hadoop 和关系数据库服务器之间传送数据的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-19T10:30:09.000Z">
-<meta property="article:modified_time" content="2022-07-15T07:34:18.802Z">
+<meta property="article:modified_time" content="2022-07-16T03:46:37.310Z">
 <meta property="article:author" content="是橙子呀">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="BD">
@@ -250,7 +250,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>sqoop 是在<mark>Hadoop 和关系数据库服务器之间传送数据</mark>的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。工作机制是将导入或导出命令翻译成 MapReduce 程序来实现，在翻译出的 MapReduce 中主要是对 InputFormat 和 OutputFormat 进行定制</p>
+    <p>sqoop 是在<mark>Hadoop 和关系数据库服务器之间传送数据</mark>的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。</p>
+<span id="more"></span>
+<p>工作机制是将导入或导出命令翻译成 MapReduce 程序来实现，在翻译出的 MapReduce 中主要是对 InputFormat 和 OutputFormat 进行定制</p>
 <ul>
 <li>导入数据
 <ul>
@@ -265,7 +267,7 @@
 </ul>
 <p>sqoop本质就是迁移数据， 迁移的方式是把sqoop的迁移命令转换成MR程序<br>
 hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程序</p>
-<h3 id="install-v2"><a class="header-anchor" href="#install-v2"></a>install</h3>
+<h3 id="install"><a class="header-anchor" href="#install"></a>install</h3>
 <figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf sqoop-1.4.7.bin__hadoop-2.0.4-alpha.tar.gz -C /Data/</span><br><span class="line"><span class="built_in">cd</span> /Data</span><br><span class="line"><span class="built_in">mv</span> sqoop-1.4.7.bin__hadoop-2.0.4-alpha/ sqoop-1.4.7</span><br><span class="line"><span class="built_in">cd</span> /Data/sqoop-1.4.7</span><br><span class="line"><span class="comment"># ls -al</span></span><br><span class="line"><span class="built_in">mv</span> sqoop-env-template.sh  sqoop-env.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit config_files</span></span><br><span class="line">vim sqoop-env.sh </span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_COMMON_HOME=/home/hadoop/apps/hadoop-2.7.5</span><br><span class="line"></span><br><span class="line"><span class="comment">#Set path to where hadoop-*-core.jar is available</span></span><br><span class="line"><span class="built_in">export</span> HADOOP_MAPRED_HOME=/home/hadoop/apps/hadoop-2.7.5</span><br><span class="line"></span><br><span class="line"><span class="comment">#set the path to where bin/hbase is available</span></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/home/hadoop/apps/hbase-1.2.6</span><br><span class="line"></span><br><span class="line"><span class="comment">#Set the path to where bin/hive is available</span></span><br><span class="line"><span class="built_in">export</span> HIVE_HOME=/home/hadoop/apps/apache-hive-2.3.3-bin</span><br><span class="line"></span><br><span class="line"><span class="comment">#Set the path for where zookeper config dir is</span></span><br><span class="line"><span class="built_in">export</span> ZOOCFGDIR=/home/hadoop/apps/zookeeper-3.4.10/conf</span><br></pre></td></tr></tbody></table></figure>
 
     
@@ -430,8 +432,8 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
 <nav id="article-nav">
   
   
-    <a href="/2022/07/16/code/BigData/cloudare/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CDP</div>
+    <a href="/2022/07/19/code/BigData/kafka/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kafka</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -458,7 +460,7 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#install-v2"><span class="toc-number">1.</span> <span class="toc-text">install</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-number">1.</span> <span class="toc-text">install</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -720,6 +722,10 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
             
             <div class="clearfix"></div>

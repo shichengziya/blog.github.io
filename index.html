@@ -229,24 +229,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>sqoop 是在<mark>Hadoop 和关系数据库服务器之间传送数据</mark>的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。工作机制是将导入或导出命令翻译成 MapReduce 程序来实现，在翻译出的 MapReduce 中主要是对 InputFormat 和 OutputFormat 进行定制</p>
-<ul>
-<li>导入数据
-<ul>
-<li>从MySQL，Oracle 导入数据到 Hadoop 的 HDFS、HIVE、HBASE 等数据存储系统</li>
-</ul>
-</li>
-<li>导出数据
-<ul>
-<li>Hadoop 的文件系统中导出数据到关系数据库 mysql 等 Sqoop 的本质还是一个命令行工具</li>
-</ul>
-</li>
-</ul>
-<p>sqoop本质就是迁移数据， 迁移的方式是把sqoop的迁移命令转换成MR程序<br>
-hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程序</p>
-<h3 id="install-v2"><a class="header-anchor" href="#install-v2"></a>install</h3>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf sqoop-1.4.7.bin__hadoop-2.0.4-alpha.tar.gz -C /Data/</span><br><span class="line"><span class="built_in">cd</span> /Data</span><br><span class="line"><span class="built_in">mv</span> sqoop-1.4.7.bin__hadoop-2.0.4-alpha/ sqoop-1.4.7</span><br><span class="line"><span class="built_in">cd</span> /Data/sqoop-1.4.7</span><br><span class="line"><span class="comment"># ls -al</span></span><br><span class="line"><span class="built_in">mv</span> sqoop-env-template.sh  sqoop-env.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit config_files</span></span><br><span class="line">vim sqoop-env.sh </span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_COMMON_HOME=/home/hadoop/apps/hadoop-2.7.5</span><br><span class="line"></span><br><span class="line"><span class="comment">#Set path to where hadoop-*-core.jar is available</span></span><br><span class="line"><span class="built_in">export</span> HADOOP_MAPRED_HOME=/home/hadoop/apps/hadoop-2.7.5</span><br><span class="line"></span><br><span class="line"><span class="comment">#set the path to where bin/hbase is available</span></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/home/hadoop/apps/hbase-1.2.6</span><br><span class="line"></span><br><span class="line"><span class="comment">#Set the path to where bin/hive is available</span></span><br><span class="line"><span class="built_in">export</span> HIVE_HOME=/home/hadoop/apps/apache-hive-2.3.3-bin</span><br><span class="line"></span><br><span class="line"><span class="comment">#Set the path for where zookeper config dir is</span></span><br><span class="line"><span class="built_in">export</span> ZOOCFGDIR=/home/hadoop/apps/zookeeper-3.4.10/conf</span><br></pre></td></tr></tbody></table></figure>
-
+    <p>sqoop 是在<mark>Hadoop 和关系数据库服务器之间传送数据</mark>的工具，使用时需要在节点上安装。核心功能就是数据的导入导出和迁入迁出。</p>
+    
+    <a class="article-more-a" href="/2022/07/19/code/BigData/Sqoop/#more">more >></a>
+    
     
 
     
@@ -296,6 +282,225 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/07/19/code/BigData/Sqoop/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-code/BigData/kafka" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/19/code/BigData/kafka/" target="_blank">kafka</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/19/code/BigData/kafka/" class="archive-article-date">
+        <time datetime="2022-07-19T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BD</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">kafka</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code/BigData//" class="article-tag-list-link color3">BD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/19/code/BigData/kafka/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-code/BigData/pysqpark" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/17/code/BigData/pysqpark/" target="_blank">pyspark_foundation</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/17/code/BigData/pysqpark/" class="archive-article-date">
+        <time datetime="2022-07-17T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>安装及部分基本操作</p>
+    
+    <a class="article-more-a" href="/2022/07/17/code/BigData/pysqpark/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BD</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code/BigData//" class="article-tag-list-link color3">BD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/17/code/BigData/pysqpark/">Show_Me_All >></a>
     </p>
     
 
@@ -516,6 +721,109 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/07/16/code/algorithm/collections/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily-record/technology/yilia_background" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/16/daily-record/technology/yilia_background/" target="_blank">背景优化</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/16/daily-record/technology/yilia_background/" class="archive-article-date">
+        <time datetime="2022-07-16T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>yilia主题背景调优 &amp;&amp; 底部标签转码</p>
+    
+    <a class="article-more-a" href="/2022/07/16/daily-record/technology/yilia_background/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/07/16/daily-record/technology/yilia_background/">Show_Me_All >></a>
     </p>
     
 
@@ -967,319 +1275,6 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
 
 
   
-    <article id="post-daily-record/emotion/thoughts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/07/14/daily-record/emotion/thoughts/" target="_blank">随想</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/07/14/daily-record/emotion/thoughts/" class="archive-article-date">
-        <time datetime="2022-07-14T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    内有惊喜
-    
-    <a class="article-more-a" href="/2022/07/14/daily-record/emotion/thoughts/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/07/14/daily-record/emotion/thoughts/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-daily-record/technology/PackagesOfCommandline" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/07/14/daily-record/technology/PackagesOfCommandline/" target="_blank">命令行工具列表</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/07/14/daily-record/technology/PackagesOfCommandline/" class="archive-article-date">
-        <time datetime="2022-07-14T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>部分常用工具记录</p>
-    
-    <a class="article-more-a" href="/2022/07/14/daily-record/technology/PackagesOfCommandline/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record/shell//" class="article-tag-list-link color1">shell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/07/14/daily-record/technology/PackagesOfCommandline/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/shell/Command_Line_Record" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/07/13/code/shell/Command_Line_Record/" target="_blank">命令行（一）</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/07/13/code/shell/Command_Line_Record/" class="archive-article-date">
-        <time datetime="2022-07-13T14:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>OSEMN——获取、清洗、探索、建模和解释数据</p>
-<h3 id="命令行-shell"><a class="header-anchor" href="#命令行-shell"></a>命令行 &amp; shell</h3>
-<pre><code>1. shell是linux命令集的概称，是属于命令行的人机界面
-2. shell可以重复执行一些命令。也可以把要重复执行的命令写到脚本里面执行。而命令行的话就需要一个一个的输入命令，相对而言麻烦一些
-</code></pre>
-    
-    <a class="article-more-a" href="/2022/07/13/code/shell/Command_Line_Record/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DataScience</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/shell//" class="article-tag-list-link color1">shell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/07/13/code/shell/Command_Line_Record/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1527,6 +1522,10 @@ hive本质就是执行计算，依赖于HDFS存储数据，把SQL转换成MR程�
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
             
             <div class="clearfix"></div>
