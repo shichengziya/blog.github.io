@@ -1032,6 +1032,166 @@ $B(v)=\sum \frac{\sigma_{x,y}(v)}{\sigma_{x,y}}$<br>
 
 
   
+    <article id="post-daily-record/technology/CondaSetting" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/archives/202207176d2a527e/" target="_blank">命令行工具</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/archives/202207176d2a527e/" class="archive-article-date">
+        <time datetime="2022-07-17T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">258字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="conda-install"><a class="header-anchor" href="#conda-install"></a>conda install</h3>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华镜像源</a></p>
+<pre class="line-numbers language-none"><code class="language-none">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh
+bash Anaconda3-2021.11-Linux-x86_64.sh
+# 卸载
+# rm -rf ~/anaconda3 ~/.condarc ~/.conda ~/.continuum
+# 需要刷新环境变量
+source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="jupyter-setting"><a class="header-anchor" href="#jupyter-setting"></a>jupyter setting</h3>
+<p>配置jupyter：后台、端口、路径</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">jupyter notebook --generate-config
+# Writing default config to: /root/.jupyter/jupyter_notebook_config.py
+python
+from notebook.auth import passwd
+pwd()
+# 输入密码后复制输出的密钥，用于下一步的文件配置
+
+vim /root/.jupyter/jupyter_notebook_config.py
+# c.NotebookApp.allow_remote_access = True #允许远程连接
+# c.NotebookApp.ip='*' # 设置所有ip皆可访问
+# c.NotebookApp.password = '' #之前复制的密码
+# c.NotebookApp.open_browser = False # 禁止自动打开浏览器
+# c.NotebookApp.port =8888 #任意指定一个端口
+# c.NotebookApp.default_url = 'path'
+
+# 不显示token，开启notebook之后查看token
+jupyter notebook list
+
+# 后台
+# ​nohup​​ 表示no hang up，不挂起，命令执行后即使终端退出，服务也不会停止。
+# 指定日志文件路径为​​/jupyter/jupyter.log​​。
+jupyter notebook --allow-root \
+nohup jupyter notebook &gt;~/jupyter.log 2&gt;&amp;1 &amp;
+
+# 改密码
+jupyter notebook password
+
+# 一步到位
+# nohup jupyter notebook --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/archives/202207176d2a527e/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-daily-record/collections/AbilityList" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1347,130 +1507,6 @@ $B(v)=\sum \frac{\sigma_{x,y}(v)}{\sigma_{x,y}}$<br>
     
     <p class="article-more-link">
       <a class="article-more-a" href="/archives/2022071628d22e0d/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-daily-record/technology/yilia_background" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/archives/20220716a58019cd/" target="_blank">yilia主题优化</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/archives/20220716a58019cd/" class="archive-article-date">
-        <time datetime="2022-07-16T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-16</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.2k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>yilia主题背景调优 &amp;&amp; 底部标签转码</p>
-    
-    <a class="article-more-a" href="/archives/20220716a58019cd/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/archives/20220716a58019cd/">Show_Me_All >></a>
     </p>
     
 
