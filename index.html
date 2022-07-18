@@ -206,6 +206,397 @@
             
 
   
+    <article id="post-daily-record/technology/DockerRecord" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/archives/20220722dad3b43e/" target="_blank">Docker记录</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/archives/20220722dad3b43e/" class="archive-article-date">
+        <time datetime="2022-07-22T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-22</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">39字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>一点docker记录</p>
+    
+    <a class="article-more-a" href="/archives/20220722dad3b43e/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/archives/20220722dad3b43e/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily-record/technology/LetsencryptRecord" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/archives/20220722741cac61/" target="_blank">Certbot证书相关记录</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/archives/20220722741cac61/" class="archive-article-date">
+        <time datetime="2022-07-22T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-22</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">121字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="账户"><a class="header-anchor" href="#账户"></a>账户</h3>
+<p>账户信息都保存在/etc/letsencrypt/account目录下，查看目录结构：<br>
+`sudo tree /etc/letsencrypt·</p>
+<h3 id="dns认证"><a class="header-anchor" href="#dns认证"></a>dns认证</h3>
+<p><a target="_blank" rel="noopener" href="https://letsencrypt.org/zh-cn/how-it-works/">认证原理</a></p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 生成一段认证字符串
+# 需要到相应dns控制台添加txt解析记录
+# 主机名为_acme-challenge
+certbot --manual --preferred-challenges dns certonly
+
+# 查看txt解析是否解析完毕
+dig -t txt _acme-challenge.example.com
+# nslookup -type=TXT  _acme-challenge.example.com
+certbot certonly --webroot -w /var/www/example -d www.example.com -d example.com -w /var/www/other -d other.example.net -d another.other.example.net<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/archives/20220722741cac61/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily-record/technology/port_errors_record" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/archives/202207228fca1d44/" target="_blank">端口相关</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/archives/202207228fca1d44/" class="archive-article-date">
+        <time datetime="2022-07-22T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-22</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">75字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>端口相关记录</p>
+    
+    <a class="article-more-a" href="/archives/202207228fca1d44/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/archives/202207228fca1d44/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-code/BigData/hive-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -596,7 +987,7 @@
 
 
   
-    <article id="post-code/BigData/pysqpark" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-daily-record/technology/DockerDeployBlog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -604,7 +995,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/archives/202207179e66f774/" target="_blank">pyspark_foundation</a>
+	  <a class="article-title" href="/archives/202207189f9e362/" target="_blank">Docker部署blog</a>
   
     </h1>
   
@@ -612,8 +1003,8 @@
 
   
   
-<a href="/archives/202207179e66f774/" class="archive-article-date">
-        <time datetime="2022-07-17T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
+<a href="/archives/202207189f9e362/" class="archive-article-date">
+        <time datetime="2022-07-18T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-18</time>
 </a>
 
   
@@ -626,7 +1017,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">34字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -635,7 +1026,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -646,9 +1037,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>安装及部分基本操作</p>
+    <p>部署记录</p>
     
-    <a class="article-more-a" href="/archives/202207179e66f774/#more">more >></a>
+    <a class="article-more-a" href="/archives/202207189f9e362/#more">more >></a>
     
     
 
@@ -669,475 +1060,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BD</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/BigData//" class="article-tag-list-link color3">BD</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/archives/202207179e66f774/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/BigData/SocialNetwork" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/archives/202207179aecbe53/" target="_blank">Conception Of SocialNetwork</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/archives/202207179aecbe53/" class="archive-article-date">
-        <time datetime="2022-07-17T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">759字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="相关术语-定义"><a class="header-anchor" href="#相关术语-定义"></a>相关术语&amp;定义</h3>
-<p>社交网络就是所有节点与边的集合<br>
-参与者、节点——网络中的基本单位<br>
-关系连接——节点间的相互连接关系<br>
-二分体（dyad）<br>
-三分体（traid）<br>
-子网络、自我中心网络（ego network）<br>
-向心性——社交网络中的重要性定义</p>
-<ol>
-<li>自由度<br>
-$C(x)=\sum 2^{-d(x,y)}$</li>
-<li>中间性（特征向心度）<br>
-$B(v)=\sum \frac{\sigma_{x,y}(v)}{\sigma_{x,y}}$<br>
-其中，$\sigma_{x,y}$节点x和节点y之间的最短路径数，$\sigma_{x,y}(v)$ 为最短路径中通过节点v的路径数<br>
-用 Python， 那 么 NeworkX（http:// <a target="_blank" rel="noopener" href="http://networkx.github.io/%EF%BC%89">networkx.github.io/）</a> 或 者 igraph（<a target="_blank" rel="noopener" href="http://igraph.sourceforge.net/%EF%BC%89%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E8%AE%A1%E7%AE%97%E8%BF%99%E4%BA%9B%E6%B5%8B%E5%BA%A6%E6%8C%87%E6%A0%87">http://igraph.sourceforge.net/）可以用来计算这些测度指标</a><br>
-在R中可以使用statnet包（<a target="_blank" rel="noopener" href="http://statnet.org/%EF%BC%89">http://statnet.org/）</a><br>
-用Excel，可以选择NodeXL（<a target="_blank" rel="noopener" href="http://research.microsoft.com/en-us/projects/nodexl/%EF%BC%89">http://research.microsoft.com/en-us/projects/nodexl/）</a></li>
-</ol>
-<h3 id="统计学视角"><a class="header-anchor" href="#统计学视角"></a>统计学视角</h3>
-<p>从统计学的角度来看可以将网络看作一个随机数或者随机变量，是由某个随机过程或者某个概率分布形成的。</p>
-<h4 id="表示网络与特征值向心度"><a class="header-anchor" href="#表示网络与特征值向心度"></a>表示网络与特征值向心度</h4>
-<p>相邻矩阵（adjacencymatrix）或者关联矩阵（incidence matrix）：</p>
-<ul>
-<li>一个包含N个节点的无向网络可以用一个N * N的二元矩阵表示，矩阵中只有0和1两个值。</li>
-<li>如果第（i, j)个元素是1则代表从节点i到节点j是相连的。</li>
-<li>也可以用来定义有向网络，而无向网络的特别之处在于这样的矩阵是对称的</li>
-<li>相邻矩阵表示一个网络，那么就可以定义特征值向心度
-<ul>
-<li>假设相邻矩阵为A，该矩阵的特征值为$\lambda$，对应的特征向量为x，解特征值和特征向量</li>
-<li>通常的做法是将特征值从大到小排列，并取其中最大的特征值及其对应的特征向量。特征值代表的就是向心度的大小，而对应的特征向量则是向心度在各个连接上的得分值</li>
-<li>$(A-\lambda I)x=0$</li>
-<li>特征向量x就是想要的特征向量向心度<br>
-列表和多元列表</li>
-</ul>
-</li>
-</ul>
-<pre><code>- 比如说，对于一个节点i，可以用一个列表列出连接i的所有的边，这样的列表也叫作关联列表。这样做的好处是，节点可以有多重属性，而且这样的表示方式可以节省很多存储空间。如果节点有多重属性，那么相应的表示方法叫作多重列表。
-- 比如说节点代表人，那么可能的属性包括人的性别、年龄、身高等。如果节点是人的某种行为，习惯或者爱好，那么相应的属性也会随着改变
-</code></pre>
-<h3 id="模型"><a class="header-anchor" href="#模型"></a>模型</h3>
-<h4 id="指数随机网络图模型（ERGM）"><a class="header-anchor" href="#指数随机网络图模型（ERGM）"></a>指数随机网络图模型（ERGM）</h4>
-<p>社会学中广泛使用的网络模型，它可以涵盖大多数的网络特性。<br>
-对于一个网络Y，出现我们观测到的网络y的概率可以表示一系列网络变量的线性组合形式</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BD</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Statistic</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/BigData//" class="article-tag-list-link color3">BD</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/archives/202207179aecbe53/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/BigData/mapreudce-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/archives/20220717ca985a95/" target="_blank">Conception Of Mapreduce</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/archives/20220717ca985a95/" class="archive-article-date">
-        <time datetime="2022-07-17T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">470字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>MapReduce是一种算法和框架，用来处理海量数据,Pregel（Pregel也来自谷歌，开源），对工程师的算法知识要求不高，支持大规模图的计算.</p>
-    
-    <a class="article-more-a" href="/archives/20220717ca985a95/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BD</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/BigData//" class="article-tag-list-link color3">BD</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/archives/20220717ca985a95/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-daily-record/technology/CondaSetting" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/archives/202207176d2a527e/" target="_blank">命令行工具</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/archives/202207176d2a527e/" class="archive-article-date">
-        <time datetime="2022-07-17T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-17</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">258字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="conda-install"><a class="header-anchor" href="#conda-install"></a>conda install</h3>
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华镜像源</a></p>
-<pre class="line-numbers language-none"><code class="language-none">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh
-bash Anaconda3-2021.11-Linux-x86_64.sh
-# 卸载
-# rm -rf ~/anaconda3 ~/.condarc ~/.conda ~/.continuum
-# 需要刷新环境变量
-source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="jupyter-setting"><a class="header-anchor" href="#jupyter-setting"></a>jupyter setting</h3>
-<p>配置jupyter：后台、端口、路径</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">jupyter notebook --generate-config
-# Writing default config to: /root/.jupyter/jupyter_notebook_config.py
-python
-from notebook.auth import passwd
-pwd()
-# 输入密码后复制输出的密钥，用于下一步的文件配置
-
-vim /root/.jupyter/jupyter_notebook_config.py
-# c.NotebookApp.allow_remote_access = True #允许远程连接
-# c.NotebookApp.ip='*' # 设置所有ip皆可访问
-# c.NotebookApp.password = '' #之前复制的密码
-# c.NotebookApp.open_browser = False # 禁止自动打开浏览器
-# c.NotebookApp.port =8888 #任意指定一个端口
-# c.NotebookApp.default_url = 'path'
-
-# 不显示token，开启notebook之后查看token
-jupyter notebook list
-
-# 后台
-# ​nohup​​ 表示no hang up，不挂起，命令执行后即使终端退出，服务也不会停止。
-# 指定日志文件路径为​​/jupyter/jupyter.log​​。
-jupyter notebook --allow-root \
-nohup jupyter notebook &gt;~/jupyter.log 2&gt;&amp;1 &amp;
-
-# 改密码
-jupyter notebook password
-
-# 一步到位
-# nohup jupyter notebook --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -1162,7 +1089,111 @@ jupyter notebook password
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/archives/202207176d2a527e/">Show_Me_All >></a>
+      <a class="article-more-a" href="/archives/202207189f9e362/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-code/BigData/HdpSeeting" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/archives/202207180/">Show_Me_All >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily-record/technology/LinuxPortRecord" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="端口放行"><a class="header-anchor" href="#端口放行"></a>端口放行</h3>
+<p><code>ufw allow 4000</code><br>
+ufw enable<br>
+ufw status</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/archives/202207180/">Show_Me_All >></a>
     </p>
     
 
@@ -1244,269 +1275,7 @@ jupyter notebook password
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/archives/202207170/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/BigData/cloudare" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/archives/2022071672e3317e/" target="_blank">CDP</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/archives/2022071672e3317e/" class="archive-article-date">
-        <time datetime="2022-07-16T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-16</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">10字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>大数据平台<a target="_blank" rel="noopener" href="https://www.clouderacn.cn/products/cloudera-data-platform.html">CDP</a></p>
-<p>云原生化</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BD</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CDP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/BigData//" class="article-tag-list-link color3">BD</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/archives/2022071672e3317e/">Show_Me_All >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code/algorithm/collections" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/archives/2022071628d22e0d/" target="_blank">算法随记</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/archives/2022071628d22e0d/" class="archive-article-date">
-        <time datetime="2022-07-16T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-16</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">23字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="算法问题随记"><a class="header-anchor" href="#算法问题随记"></a>算法问题随记</h4>
-<p>10 亿个元素求最大的 1000 个值和翻转链表</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code/Algorithm//" class="article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/archives/2022071628d22e0d/">Show_Me_All >></a>
+      <a class="article-more-a" href="/archives/202207180/">Show_Me_All >></a>
     </p>
     
 
@@ -1702,6 +1471,14 @@ jupyter notebook password
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Statistic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spark</a>
               </li>
              
@@ -1711,6 +1488,14 @@ jupyter notebook password
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CDP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DataBase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1727,10 +1512,6 @@ jupyter notebook password
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1758,15 +1539,19 @@ jupyter notebook password
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Novel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Read&Think</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1778,19 +1563,11 @@ jupyter notebook password
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Statistic</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DataBase</a>
               </li>
             
             <div class="clearfix"></div>

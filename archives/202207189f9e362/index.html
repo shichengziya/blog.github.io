@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shichengziya.github.io">
-  <title>橙子安全屋</title>
+  <title>Docker部署blog | 橙子安全屋</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="AbilityList   探索性数据分析；  可视化（用在探索性数据分析和汇报中）；  数字面板和矩阵；  对业务的洞察力；  数据驱动决策；  数据工程和处理大数据的能力（Mapreduce、Hadoop、Hive、Pig）；  收集数据；  构建数据管道（日志→mapreduce→数据文件→同其他数据合并→mapreduce→清除一些噪声→合并）；  开发新产品，而不仅仅停留在对现有产品的使">
+  <meta name="description" content="部署记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="橙子安全屋">
-<meta property="og:url" content="https://shichengziya.github.io/archives/202207170/index.html">
+<meta property="og:title" content="Docker部署blog">
+<meta property="og:url" content="https://shichengziya.github.io/archives/202207189f9e362/index.html">
 <meta property="og:site_name" content="橙子安全屋">
-<meta property="og:description" content="AbilityList   探索性数据分析；  可视化（用在探索性数据分析和汇报中）；  数字面板和矩阵；  对业务的洞察力；  数据驱动决策；  数据工程和处理大数据的能力（Mapreduce、Hadoop、Hive、Pig）；  收集数据；  构建数据管道（日志→mapreduce→数据文件→同其他数据合并→mapreduce→清除一些噪声→合并）；  开发新产品，而不仅仅停留在对现有产品的使">
+<meta property="og:description" content="部署记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-17T08:19:14.773Z">
-<meta property="article:modified_time" content="2022-07-17T08:19:33.645Z">
+<meta property="article:published_time" content="2022-07-18T10:30:09.000Z">
+<meta property="article:modified_time" content="2022-07-18T08:08:33.700Z">
 <meta property="article:author" content="是橙子呀">
-<meta property="article:tag" content="records,thoughts,">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="橙子安全屋" type="application/atom+xml">
@@ -201,43 +203,277 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-daily-record/collections/AbilityList" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-daily-record/technology/DockerDeployBlog" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      Docker部署blog
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/archives/202207189f9e362/" class="archive-article-date">
+        <time datetime="2022-07-18T10:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-18</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    <p>AbilityList</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" id="cbx_0" checked="true" disabled="true"><label for="cbx_0"> 探索性数据分析；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> 可视化（用在探索性数据分析和汇报中）；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_2" checked="true" disabled="true"><label for="cbx_2"> 数字面板和矩阵；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_3" checked="true" disabled="true"><label for="cbx_3"> 对业务的洞察力；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_4" checked="true" disabled="true"><label for="cbx_4"> 数据驱动决策；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_5" checked="true" disabled="true"><label for="cbx_5"> 数据工程和处理大数据的能力（Mapreduce、Hadoop、Hive、Pig）；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_6" checked="true" disabled="true"><label for="cbx_6"> 收集数据；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_7" checked="true" disabled="true"><label for="cbx_7"> 构建数据管道（日志→mapreduce→数据文件→同其他数据合并→mapreduce→清除一些噪声→合并）；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_8" checked="true" disabled="true"><label for="cbx_8"> 开发新产品，而不仅仅停留在对现有产品的使用进行描述上；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_9" checked="true" disabled="true"><label for="cbx_9"> Hack；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_10" checked="true" disabled="true"><label for="cbx_10"> 数据侦探；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_11" checked="true" disabled="true"><label for="cbx_11"> 预测未来的行为或性能；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_12" checked="true" disabled="true"><label for="cbx_12"> 将发现写成报告、做讲演或发表在学术期刊上；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_13" checked="true" disabled="true"><label for="cbx_13"> 编程（熟练使用R、Python、C和Java等语言）；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_14" checked="true" disabled="true"><label for="cbx_14"> 条件概率；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_15" checked="true" disabled="true"><label for="cbx_15"> 优化；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_16" checked="true" disabled="true"><label for="cbx_16"> 算法、统计模型和机器学习；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_17" checked="true" disabled="true"><label for="cbx_17"> 讲故事的能力；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_18" checked="true" disabled="true"><label for="cbx_18"> 会提问题；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_19" checked="true" disabled="true"><label for="cbx_19"> 做调查；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_20" checked="true" disabled="true"><label for="cbx_20"> 搞研究；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_21" checked="true" disabled="true"><label for="cbx_21"> 从数据中做出推测；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_22" checked="true" disabled="true"><label for="cbx_22"> 开发数据产品；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_23" checked="true" disabled="true"><label for="cbx_23"> 找到处理数据的方法，会根据数据规模改变分析策略；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_24" checked="true" disabled="true"><label for="cbx_24"> 一致性检查；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_25" checked="true" disabled="true"><label for="cbx_25"> 对数据的直觉；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_26" checked="true" disabled="true"><label for="cbx_26"> 和领域专家打交道的能力（或者成为一个领域专家）</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_27" checked="true" disabled="true"><label for="cbx_27"> 设计和分析实验；</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_28" checked="true" disabled="true"><label for="cbx_28"> 发现数据间的相关性，并且尝试建立潜在的因果关系。</label></li>
-</ul>
+    <p>部署记录</p>
+<span id="more"></span>
+<h3 id="install-v3"><a class="header-anchor" href="#install-v3"></a>install</h3>
+<p>安装docker</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">uname -a
+
+# 本机
+# 为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# 官方源
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# 向 sources.list 中添加 Docker 软件源
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# 查看发行版本
+apt-cache madison docker-ce 
+
+# docker
+# hexo
+docker pull ubuntu  
+docker run -it --name hexo ubuntu
+docker run -it ubuntu
+apt-get update
+apt-get install -y wget
+apt-get install -y git-core
+cd /root
+mkdir hexo
+cd hexo
+wget https://raw.github.com/creationix/nvm/v0.33.11/install.sh
+chmod +x install.sh
+./install.sh
+NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install stable # 换源
+npm install -g hexo-cli
+npm install hexo-server --save
+
+docker commit -m "Hexo origin submit" -a "Orange" 1ac140d51bcf hexo
+
+# nginx
+
+# githook
+# Hook 就是在执行某个事件之前或之后进行一些其他额外的操作
+
+
+# 同步
+# syncpost.sh
+
+docker run -d --name="hexo" -p 80:4000 -v /root/hexo/blog:/root/hexo/blog hexo /root/hexo/blog/start.sh
+
+# hexo-&gt;4376(九宫格)
+docker run -d \
+--name="hexo" \
+-p 4376:4000 \
+-v /Data/chengziyu/:/root/hexo \
+hexo /root/hexo/blog/start.sh
+
+
+
+# 配置证书
+docker exec -it "[your_container_name]" /bin/bash
+# 申请证书
+# Certbot会自动识别上文中配置的Nginx文件，加入证书验证和443端口开放。
+certbot --nginx -d "[your_domain.com]"
+# 手动更新
+/usr/bin/certbot renew
+# 自动更新
+echo "0 0 1 * * /usr/bin/certbot renew --quiet" &gt;&gt; /etc/crontabs/root
+
+# 配置docker ssh
+mkdir ~/.ssh
+echo "[your_ssh_public_key]" &gt; ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+mkdir /run/sshd
+/usr/sbin/sshd
+
+
+# 本机
+# hexo _config.yml
+deploy:
+  type: git
+  repo: 
+    - https://github.com/hexojs/hexojs.github.io
+    - root@hexo-docker:/root/blogs.git 
+    #Docker中8004端口作为SSH端口，但repo没法写端口号，写一个hexo-test作为config
+  branch: master
+
+# ssh
+# ~/.ssh/config中配置你的云服务公网ip，ssh端口
+Host hexo-docker
+  HostName [ServerIp]
+  Port 4376
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="dockerfile"><a class="header-anchor" href="#dockerfile"></a>dockerfile</h3>
+<pre class="line-numbers language-raw" data-language="raw"><code class="language-raw">#基于Nginx镜像
+FROM nginx:latest
+
+#换国内的源，这里用网易源
+RUN sed -i 's#http://deb.debian.org#https://mirrors.163.com#g' /etc/apt/sources.list
+RUN sed -i 's#http://security.debian.org#https://mirrors.163.com#g' /etc/apt/sources.list
+
+#更新Docker中的apt-get
+RUN rm -Rf /var/lib/apt/lists/* &amp;&amp; apt-get update
+
+#安装Git，挂载Githooks钩子，并将产物放置在var/www/hexo中
+RUN apt-get install -y git
+RUN git init --bare ~/blogs.git
+RUN mkdir -p /var/www/hexo
+RUN echo "git --work-tree=/var/www/hexo --git-dir=/root/blogs.git checkout -f" &gt;~/blogs.git/hooks/post-receive
+RUN chmod a+x ~/blogs.git/hooks/post-receive
+
+#SSH初始化
+RUN apt-get install -y openssh-server
+RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -y
+RUN ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -y
+RUN ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -y
+
+#安装Certbot
+RUN apt-get install -y certbot
+RUN apt-get install -y python3-certbot-nginx
+
+#初始化Nginx配置挂载，这里选择直接覆盖所有配置
+ADD nginx/hexo.conf /etc/nginx/nginx.conf
+
+#暴露22 SSH
+#暴露80 HTTP
+#暴露443 HTTPS
+EXPOSE 22
+EXPOSE 80
+EXPOSE 443<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在命令行操作</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker build -t hexo-docker .
+docker run -v $(pwd)/letsencrypt:/etc/letsencrypt -d -p 80:80 -p 443:443 -p 4376:22 hexo-docker
+docker exec -it  hexo-docker /bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="证书部署"><a class="header-anchor" href="#证书部署"></a>证书部署</h3>
+<p>需要进入容器</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">certbot --nginx -d "[your_domain.com]"
+
+certbot certonly --webroot -w /usr/share/nginx/html/ -d your.domain.com
+# 证书更新
+/usr/bin/certbot renew
+# Letsencrypt 3个月需要更新一次，自动更新
+echo "0 0 1 * * /usr/bin/certbot renew --quiet" &gt;&gt; /etc/crontabs/root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="shh-配置"><a class="header-anchor" href="#shh-配置"></a>shh 配置</h3>
+<p>docker容器内</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mkdir ~/.ssh
+echo "[your_ssh_public_key]" &gt; ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+mkdir /run/sshd
+/usr/sbin/sshd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>宿主机</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 新增~/.ssh/config文件
+# ~/.ssh/config中配置你的云服务公网ip，ssh端口即可
+Host hexo-test
+  HostName [your_remote_server_ip]
+  Port 4376<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="nginx"><a class="header-anchor" href="#nginx"></a>nginx</h3>
+<p><code>nginx.conf</code>文件路径实在dockerfile的次级目录<code>/nginx/hexo.conf</code></p>
+<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">user nginx;
+worker_processes auto;
+
+error_log /var/log/nginx/error.log warn;
+pid /var/run/nginx.pid;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
+
+  log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+  '$status $body_bytes_sent "$http_referer" '
+  '"$http_user_agent" "$http_x_forwarded_for"';
+
+  access_log /var/log/nginx/access.log main;
+
+  sendfile on;
+  #tcp_nopush     on;
+
+  keepalive_timeout 65;
+
+  #gzip  on;
+
+  #include /etc/nginx/conf.d/*.conf;
+  server {
+    listen 80;
+    server_name chengziyu.xyz; 
+    
+    location ^~ /.well-known/acme-challenge/ {
+      default_type "text/plain";
+      root /var/www/hexo; 
+    }
+
+    location = /.well-known/acme-challenge/ {
+      return 404;
+    }
+
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+      root /usr/share/nginx/html;
+    }
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="errors"><a class="header-anchor" href="#errors"></a>errors</h3>
+<p>2022/07/18 04:30:12 [emerg] 107#107: location “/50x.html” is outside location<br>
+“/.well-known/acme-challenge/” in /etc/nginx/nginx.conf:39<br>
+nginx: [emerg] location “/50x.html” is outside location<br>
+“/.well-known/acme-challenge/” in /etc/nginx/nginx.conf:39<br>
+nginx: configuration file /etc/nginx/nginx.conf test failed</p>
 
     
 
@@ -284,7 +520,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://shichengziya.github.io/archives/202207170/" title="" target="_blank">https://shichengziya.github.io/archives/202207170/</a>
+          <a href="https://shichengziya.github.io/archives/202207189f9e362/" title="Docker部署blog" target="_blank">https://shichengziya.github.io/archives/202207189f9e362/</a>
         </li>
         
         <li>
@@ -301,7 +537,41 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record//" class="article-tag-list-link color3">Daily-Record</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/daily-record/technology//" class="article-tag-list-link color1">Technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -351,7 +621,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://shichengziya.github.io/archives/202207170/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://shichengziya.github.io/archives/202207189f9e362/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -366,18 +636,18 @@
 
 <nav id="article-nav">
   
-    <a href="/archives/202207176d2a527e/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/archives/202207195bbc7517/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          命令行工具
+          kafka
         
       </div>
     </a>
   
   
-    <a href="/archives/2022071672e3317e/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CDP</div>
+    <a href="/archives/202207180/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -593,6 +863,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Statistic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spark</a>
               </li>
              
@@ -602,6 +880,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CDP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DataBase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,10 +904,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,15 +931,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Novel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Read&Think</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,19 +955,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Statistic</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DataBase</a>
               </li>
             
             <div class="clearfix"></div>
