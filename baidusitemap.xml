@@ -1,23 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://chengziyu.xyz/2022/07/09/code/BigData/ETL%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/19/code/BigData/HdpSeeting/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/17/code/BigData/SocialNetwork/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/09/code/BigData/Spark1/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/19/code/BigData/Sqoop/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/16/code/BigData/cloudare/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
     <loc>https://chengziyu.xyz/2022/07/20/code/BigData/hive-1/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/04/statistic/theory/StatisticTheoryWithR/</loc>
+    <loc>https://chengziyu.xyz/2022/07/19/code/BigData/kafka/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/06/statistic/theory/StatisticTheoryWithR2/</loc>
+    <loc>https://chengziyu.xyz/2022/07/17/code/BigData/mapreudce-1/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/09/statistic/theory/StatisticTheoryWithR3/</loc>
+    <loc>https://chengziyu.xyz/2022/07/17/code/BigData/pysqpark/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/12/statistic/theory/StatisticTheoryWithR4/</loc>
+    <loc>https://chengziyu.xyz/2022/07/15/code/DataScience/DATAScienceProject1/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/07/code/DataScience/Data_Cleaning/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/09/code/DataScience/Data_Cleaning2/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/11/code/DataScience/Data_Cleaning3/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/16/code/algorithm/collections/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/13/code/shell/Command_Line_Record/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/13/code/shell/Command_Line_Record2/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/14/code/shell/Command_Line_Record3/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
@@ -30,6 +82,10 @@
   </url>
   <url>
     <loc>https://chengziyu.xyz/2022/07/14/daily-record/novel/FireflyLane/</loc>
+    <lastmod>2022-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/09/daily-record/technology/CommandLineTools/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
@@ -65,10 +121,6 @@
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/port_errors_record/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
     <loc>https://chengziyu.xyz/2022/07/13/daily-record/technology/ShortcutKeys/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
@@ -77,80 +129,28 @@
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/09/daily-record/technology/CommandLineTools/</loc>
+    <loc>https://chengziyu.xyz/2022/07/04/statistic/theory/StatisticTheoryWithR/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/14/code/shell/Command_Line_Record3/</loc>
+    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/port_errors_record/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/13/code/shell/Command_Line_Record2/</loc>
+    <loc>https://chengziyu.xyz/2022/07/06/statistic/theory/StatisticTheoryWithR2/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/13/code/shell/Command_Line_Record/</loc>
+    <loc>https://chengziyu.xyz/2022/07/09/statistic/theory/StatisticTheoryWithR3/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
-    <loc>https://chengziyu.xyz/2022/07/15/code/DataScience/DATAScienceProject1/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/11/code/DataScience/Data_Cleaning3/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/09/code/DataScience/Data_Cleaning2/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/07/code/DataScience/Data_Cleaning/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/19/code/BigData/Sqoop/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/09/code/BigData/Spark1/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/17/code/BigData/SocialNetwork/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/17/code/BigData/pysqpark/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/17/code/BigData/mapreudce-1/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/19/code/BigData/kafka/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/19/code/BigData/HdpSeeting/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/16/code/BigData/cloudare/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/16/code/algorithm/collections/</loc>
+    <loc>https://chengziyu.xyz/2022/07/12/statistic/theory/StatisticTheoryWithR4/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   <url>
     <loc>https://chengziyu.xyz/2022/07/13/statistic/theory/StatisticTheoryWithR5/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/09/code/BigData/ETL%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2022-07-18</lastmod>
+    <lastmod>2022-07-19</lastmod>
   </url>
   <url>
     <loc>https://chengziyu.xyz/2022/03/19/daily-record/notes/Congratulation/</loc>
