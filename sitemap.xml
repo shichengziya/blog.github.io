@@ -463,13 +463,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/tags/CDP/</loc>
-    <lastmod>2022-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/tags/Hive/</loc>
     <lastmod>2022-07-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -478,6 +471,13 @@
   
   <url>
     <loc>https://chengziyu.xyz/tags/DataBase/</loc>
+    <lastmod>2022-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/CDP/</loc>
     <lastmod>2022-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
