@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chengziyu.xyz/2022/07/07/code/DataScience/Data_Cleaning/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/04/statistic/theory/StatisticTheoryWithR/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/06/statistic/theory/StatisticTheoryWithR2/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/09/statistic/theory/StatisticTheoryWithR3/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/12/statistic/theory/StatisticTheoryWithR4/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/13/statistic/theory/StatisticTheoryWithR5/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/21/code/BigData/hive2/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/24/code/BigData/DataX/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chengziyu.xyz/2022/07/13/code/shell/Command_Line_Record/</loc>
     
     <lastmod>2022-07-22</lastmod>
@@ -74,51 +146,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/2022/07/06/statistic/theory/StatisticTheoryWithR2/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/09/statistic/theory/StatisticTheoryWithR3/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/12/statistic/theory/StatisticTheoryWithR4/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/13/statistic/theory/StatisticTheoryWithR5/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/24/code/BigData/DataX/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/2022/07/22/code/BigData/HdpSeeting/</loc>
     
     <lastmod>2022-07-22</lastmod>
@@ -129,15 +156,6 @@
   
   <url>
     <loc>https://chengziyu.xyz/2022/07/19/code/BigData/Sqoop/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/21/code/BigData/hive2/</loc>
     
     <lastmod>2022-07-22</lastmod>
     
@@ -174,15 +192,6 @@
   
   <url>
     <loc>https://chengziyu.xyz/2022/07/15/code/DataScience/DATAScienceProject1/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/07/code/DataScience/Data_Cleaning/</loc>
     
     <lastmod>2022-07-22</lastmod>
     
@@ -345,15 +354,6 @@
   
   <url>
     <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/port_errors_record/</loc>
-    
-    <lastmod>2022-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/04/statistic/theory/StatisticTheoryWithR/</loc>
     
     <lastmod>2022-07-19</lastmod>
     
