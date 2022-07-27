@@ -2,6 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chengziyu.xyz/2022/07/18/daily-record/technology/DockerDeployBlog/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/LetsencryptRecord/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/15/daily-record/technology/VimRecocrd/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/port_errors_record/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/09/statistic/theory/StatisticTheoryWithR3/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/DockerDeployGb/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/25/statistic/theory/analysis/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/22/statistic/theory/mathmodel/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/28/statistic/theory/retry/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/27/code/algorithm/CNN/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/2022/07/26/code/algorithm/RNN/</loc>
+    
+    <lastmod>2022-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chengziyu.xyz/2022/07/07/code/DataScience/Data_Cleaning/</loc>
     
     <lastmod>2022-07-22</lastmod>
@@ -21,15 +120,6 @@
   
   <url>
     <loc>https://chengziyu.xyz/2022/07/06/statistic/theory/StatisticTheoryWithR2/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/09/statistic/theory/StatisticTheoryWithR3/</loc>
     
     <lastmod>2022-07-22</lastmod>
     
@@ -110,15 +200,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/LetsencryptRecord/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/LinuxPortRecord/</loc>
     
     <lastmod>2022-07-22</lastmod>
@@ -129,15 +210,6 @@
   
   <url>
     <loc>https://chengziyu.xyz/2022/07/02/daily-record/technology/MarkdownRecord/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/15/daily-record/technology/VimRecocrd/</loc>
     
     <lastmod>2022-07-22</lastmod>
     
@@ -308,15 +380,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/2022/07/18/daily-record/technology/DockerDeployBlog/</loc>
-    
-    <lastmod>2022-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/DockerRecord/</loc>
     
     <lastmod>2022-07-19</lastmod>
@@ -345,15 +408,6 @@
   
   <url>
     <loc>https://chengziyu.xyz/2022/07/13/daily-record/technology/ShortcutKeys/</loc>
-    
-    <lastmod>2022-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/2022/07/22/daily-record/technology/port_errors_record/</loc>
     
     <lastmod>2022-07-19</lastmod>
     
@@ -418,7 +472,7 @@
 
   <url>
     <loc>https://chengziyu.xyz/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -426,196 +480,217 @@
   
   <url>
     <loc>https://chengziyu.xyz/tags/Hexo/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Hive/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/BD/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/DataX/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Linux/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/ETL/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Statistic/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Algorithm/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Spark/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Sqoop/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/CDP/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/kafka/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/SQL/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Python/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/python/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/java/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/DataScience/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Novel/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Read-Think/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Docker/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Code/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Git/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Markdown/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Windows/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/Vim/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/nginx/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/tags/R/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/Theory/</loc>
+    <lastmod>2022-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/Gitbook/</loc>
+    <lastmod>2022-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/Matlab/</loc>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -624,105 +699,105 @@
   
   <url>
     <loc>https://chengziyu.xyz/categories/Daily-Record/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Code/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Daily-Record/Technology/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Code/BD/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Code/DataScience/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Code/Algorithm/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Code/shell/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Daily-Record/Notes/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Daily-Record/novel/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/git/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Linux/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Markdown/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/shell/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Statistic/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chengziyu.xyz/categories/Statistic/Theory/</loc>
-    <lastmod>2022-07-22</lastmod>
+    <lastmod>2022-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
