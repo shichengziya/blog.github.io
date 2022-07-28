@@ -2,42 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chengziyu.xyz/p/cc8890c6/</loc>
-    
-    <lastmod>2022-07-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/p/aa7f71eb/</loc>
-    
-    <lastmod>2022-07-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/p/41acf799/</loc>
-    
-    <lastmod>2022-07-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/p/9308be4e/</loc>
-    
-    <lastmod>2022-07-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/p/b7db77e/</loc>
     
     <lastmod>2022-07-28</lastmod>
@@ -56,24 +20,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/p/82759801/</loc>
-    
-    <lastmod>2022-07-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/p/82759801/</loc>
-    
-    <lastmod>2022-07-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/p/3c3a0c85/</loc>
     
     <lastmod>2022-07-28</lastmod>
@@ -84,6 +30,60 @@
   
   <url>
     <loc>https://chengziyu.xyz/p/3c3a0c85/</loc>
+    
+    <lastmod>2022-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/41acf799/</loc>
+    
+    <lastmod>2022-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/cc8890c6/</loc>
+    
+    <lastmod>2022-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/aa7f71eb/</loc>
+    
+    <lastmod>2022-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/9308be4e/</loc>
+    
+    <lastmod>2022-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/82759801/</loc>
+    
+    <lastmod>2022-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/82759801/</loc>
     
     <lastmod>2022-07-28</lastmod>
     
@@ -272,15 +272,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/p/28d22e0d/</loc>
-    
-    <lastmod>2022-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/p/7c7bc997/</loc>
     
     <lastmod>2022-07-22</lastmod>
@@ -300,6 +291,15 @@
   
   <url>
     <loc>https://chengziyu.xyz/p/80f66610/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/p/28d22e0d/</loc>
     
     <lastmod>2022-07-22</lastmod>
     
@@ -563,27 +563,6 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/tags/Theory/</loc>
-    <lastmod>2022-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/tags/python/</loc>
-    <lastmod>2022-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chengziyu.xyz/tags/java/</loc>
-    <lastmod>2022-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chengziyu.xyz/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/</loc>
     <lastmod>2022-07-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -599,6 +578,27 @@
   
   <url>
     <loc>https://chengziyu.xyz/tags/Python/</loc>
+    <lastmod>2022-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/Theory/</loc>
+    <lastmod>2022-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/python/</loc>
+    <lastmod>2022-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chengziyu.xyz/tags/java/</loc>
     <lastmod>2022-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -726,14 +726,14 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/categories/Code/Algorithm/</loc>
+    <loc>https://chengziyu.xyz/categories/Code/DataScience/</loc>
     <lastmod>2022-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/categories/Code/DataScience/</loc>
+    <loc>https://chengziyu.xyz/categories/Code/Algorithm/</loc>
     <lastmod>2022-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -747,14 +747,14 @@
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/categories/Daily-Record/novel/</loc>
+    <loc>https://chengziyu.xyz/categories/Daily-Record/Notes/</loc>
     <lastmod>2022-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chengziyu.xyz/categories/Daily-Record/Notes/</loc>
+    <loc>https://chengziyu.xyz/categories/Daily-Record/novel/</loc>
     <lastmod>2022-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
